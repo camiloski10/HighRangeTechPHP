@@ -10,7 +10,7 @@
   <div class="table-responsive">
   <table class="table table-bordered border-primary">
   <thead class="table-light">
-  <tr style="color:#98040a;font-weight:300;text-align:center;font-family:Arial;font-size:14px;">
+  <tr style="color:cadetblue;font-weight:300;text-align:center;font-family:Arial;font-size:14px;">
           <th>Id</th>
           <th><abbr title="Codigo Telefonico">Codigo</abbr></th>
           <th>Nombre</th>

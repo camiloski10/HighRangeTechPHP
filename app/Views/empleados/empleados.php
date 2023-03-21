@@ -15,7 +15,7 @@
     <div class="table-responsive">
     <table class="table table-bordered border-primary">
   <thead class="table-light">
-    <tr style="font-family:Arial;font-size:12px;">
+    <tr style="font-family:Arial;font-size:12px; color:#0D6EFD" >
             <th>ID</th>
             <th>Nombres</th>
             <th>Apellidos</th>
@@ -39,8 +39,8 @@
               <th class="text-center">$ <?php echo $valor['salario']; ?></th>
               <th class="text-center"><?php echo $valor['estado']; ?></th>
               <th class="grid grid text-center" colspan="2">
-                <button class="btn btn-outline-primary" onclick="seleccionarEmp(<?php echo $valor['id'] . ',' . 2 ?>);"><i class="bi bi-pencil"></i></button>
-                <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#EmpleadoModalElimiar" onclick="EliminarValid(<?php echo $valor['id'] ?>);"><i class="bi bi-trash3"></i></button>
+                <button class="btn btn-outline-primary" onclick="seleccionarEmp(<?php echo $valor['id'] . ',' . 2 ?>);"><i class="bi bi-pen"></i></button>
+                <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#EmpleadoModalElimiar" onclick="EliminarValid(<?php echo $valor['id'] ?>);"><i class="bi bi-recycle"></i></button>
               </th>
 
             </tr>

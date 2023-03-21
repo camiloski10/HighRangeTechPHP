@@ -21,7 +21,7 @@ class Departamentos extends BaseController
         $departamentos = $this->departamentos->obtenerDepartamentos();
         $paises = $this->paises->obtenerPaises();
 
-        $data = ['titulo' => 'Administrar Departamentos', 'nombre' => 'Camilo', 'datos' => $departamentos, 'paises' => $paises];
+        $data = ['titulo' => ' Departamentos', 'nombre' => 'Camilo', 'datos' => $departamentos, 'paises' => $paises];
         echo view('/principal/header', $data);
         echo view('/departamentos/departamentos', $data);
     }
@@ -32,7 +32,7 @@ class Departamentos extends BaseController
         if (!$eliminados) {
             echo view('/errors/html/no_eliminados');
         } else {
-            $data = ['titulo' => 'Administrar Dptos Eliminados', 'nombre' => 'Camilo', 'datos' => $eliminados];
+            $data = ['titulo' => ' Departamentos Eliminados', 'nombre' => 'Camilo', 'datos' => $eliminados];
             echo view('/principal/header', $data);
             echo view('/departamentos/eliminados', $data);
         }

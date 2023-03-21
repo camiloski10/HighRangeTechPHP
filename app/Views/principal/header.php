@@ -24,7 +24,7 @@
 
 <header class="containerH">
   <a href="<?php echo base_url(); ?>" class="logosena">
-    <img src="<?php echo base_url(); ?>img/highrangetech.png" alt="" class="">
+    <img src="<?php echo base_url(); ?>img/highrangetech.png" alt="" class="logo">
   </a>
 
   <div class="titulo">
@@ -46,22 +46,22 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active text-light" aria-current="page" href="<?php echo base_url() ?>">Inicio</a>
+          <a class="nav-link active text-light" aria-current="page" href="<?php echo base_url() ?>"><i class="bi bi-house"></i></a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Empleados
+          <i class="bi bi-person-badge-fill"></i>
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="<?php echo base_url() ?>empleados">Administrar</a></li>
           </ul>
         </li>
         <li class="nav-item">
-          <a href="cargos" class="nav-link text-light">Cargos</a>
+          <a href="cargos" class="nav-link text-light"><i class="bi bi-person-vcard-fill"></i></a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Ubicación
+          <i class="bi bi-geo-alt"></i>
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="<?php echo base_url() ?>paises">Pais</a></li>

@@ -13,7 +13,7 @@ body {
     flex-direction: row;
     justify-items: center;
     justify-content: space-between;
-    background-color: cadetblue;
+    background-color: #0D6EFD;
     color: #fffffe;
 }
 
@@ -23,7 +23,7 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    background-color: cadetblue;
+    background-color: #0D6EFD;
     color: #fffffe;
 }
 
@@ -35,5 +35,10 @@ body {
 .logosena img{
     width: 50px;
     height: 50px;
+    padding: 10px;
+}
+.logo{
+    width: 70px;
+    height: 70px;
     padding: 10px;
 }

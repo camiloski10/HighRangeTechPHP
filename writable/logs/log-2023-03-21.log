@@ -1,48 +1,4 @@
-CRITICAL - 2023-03-21 03:24:49 --> Undefined array key "NMuni"
-in APPPATH\Views\empleados\eliminados.php on line 32.
- 1 APPPATH\Views\empleados\eliminados.php(32): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "NMuni"', 'APPPATH\\Views\\empleados\\eliminados.php', 32)
- 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\empleados\\eliminados.php')
- 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('/empleados/eliminados', [], true)
- 5 APPPATH\Controllers\Empleados.php(46): view('/empleados/eliminados', [...])
- 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Empleados->eliminados()
- 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
- 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
-CRITICAL - 2023-03-21 03:26:30 --> Undefined array key "NCargo"
-in APPPATH\Views\empleados\eliminados.php on line 33.
- 1 APPPATH\Views\empleados\eliminados.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "NCargo"', 'APPPATH\\Views\\empleados\\eliminados.php', 33)
- 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\empleados\\eliminados.php')
- 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('/empleados/eliminados', [], true)
- 5 APPPATH\Controllers\Empleados.php(46): view('/empleados/eliminados', [...])
- 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Empleados->eliminados()
- 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
- 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
-CRITICAL - 2023-03-21 03:26:50 --> Undefined array key "salario"
-in APPPATH\Views\empleados\eliminados.php on line 34.
- 1 APPPATH\Views\empleados\eliminados.php(34): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "salario"', 'APPPATH\\Views\\empleados\\eliminados.php', 34)
- 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\empleados\\eliminados.php')
- 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('/empleados/eliminados', [], true)
- 5 APPPATH\Controllers\Empleados.php(46): view('/empleados/eliminados', [...])
- 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Empleados->eliminados()
- 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
- 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
-CRITICAL - 2023-03-21 03:29:18 --> Undefined array key "NMuni"
-in APPPATH\Views\empleados\eliminados.php on line 32.
- 1 APPPATH\Views\empleados\eliminados.php(32): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "NMuni"', 'APPPATH\\Views\\empleados\\eliminados.php', 32)
- 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\empleados\\eliminados.php')
- 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('/empleados/eliminados', [], true)
- 5 APPPATH\Controllers\Empleados.php(46): view('/empleados/eliminados', [...])
- 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Empleados->eliminados()
- 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
- 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
-CRITICAL - 2023-03-21 03:29:20 --> Undefined array key "NMuni"
+CRITICAL - 2023-03-21 13:09:39 --> Undefined array key "NMuni"
 in APPPATH\Views\empleados\eliminados.php on line 32.
  1 APPPATH\Views\empleados\eliminados.php(32): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "NMuni"', 'APPPATH\\Views\\empleados\\eliminados.php', 32)
  2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\empleados\\eliminados.php')

@@ -1,6 +1,6 @@
 <div class="container card my-4">
   <div>
-    <h1 class="titulo_Vista text-center"><?php echo $titulo ?></h1>
+    <h1 class="titulo_Vista text-center" style="color:#0D6EFD;"><?php echo $titulo ?></h1>
   </div>
   <div>
     <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#MuniModal">Agregar</button>
@@ -12,7 +12,7 @@
   <div class="table-responsive">
   <table class="table table-bordered border-primary">
   <thead class="table-light">
-    <tr style="color:#98040a;font-weight:300;text-align:center;font-family:Arial;font-size:14px;">
+    <tr style="color:#0D6EFD;font-weight:300;text-align:center;font-family:Arial;font-size:14px;">
           <th>Id</th>
           <th>Nombre</th>
           <th>Departamento</th>
@@ -28,9 +28,9 @@
             <th class="text-center"><?php echo $valor['Departamento']; ?></th>
             <th class="text-center"><?php echo $valor['estado']; ?></th>
             <th class="grid grid text-center" colspan="2">
-              <button class="btn btn-outline-primary"><i class="bi bi-pencil"></i></button>
+              <button class="btn btn-outline-primary"><i class="bi bi-pen"></i></button>
               <button class="btn btn-outline-danger">
-                <i class="bi bi-trash3"></i>
+              <i class="bi bi-recycle"></i>
               </button>
             </th>
 

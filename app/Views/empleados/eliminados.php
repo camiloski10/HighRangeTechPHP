@@ -10,7 +10,7 @@
   <div class="table-responsive">
   <table class="table table-bordered border-primary">
   <thead class="table-light">
-  <tr style="color:#98040a;font-weight:300;text-align:center;font-family:Arial;font-size:14px;">
+  <tr style="color:#0D6EFD;font-weight:300;text-align:center;font-family:Arial;font-size:14px;">
   <th>ID</th>
             <th>Nombres</th>
             <th>Apellidos</th>

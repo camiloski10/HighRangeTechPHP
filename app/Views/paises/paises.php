@@ -12,9 +12,9 @@
   <div class="table-responsive">
   <table class="table table-bordered border-primary">
   <thead class="table-light">
-    <tr style="color:#98040a;font-weight:300;text-align:center;font-family:Arial;font-size:14px;">
+    <tr style="color:#0D6EFD;font-weight:300;text-align:center;font-family:Arial;font-size:14px;">
           <th>Id</th>
-          <th><abbr title="Codigo Telefonico">Codigo</abbr></th>
+          <th>Codigo</th>
           <th>Nombre</th>
           <th>Estado</th>
           <th colspan="2">Acciones</th>
@@ -31,10 +31,10 @@
 
               <button class="btn btn-outline-primary" onclick="seleccionaPais(<?php echo $valor['id'] . ',' . 2 ?>);" data-bs-toggle="modal" data-bs-target="#PaisModal">
 
-                <i class="bi bi-pencil"></i>
+                <i class="bi bi-pen"></i>
 
               </button>
-              <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#PaisModalElimiar" onclick="EliminarValid(<?php echo $valor['id'] ?>);"><i class="bi bi-trash3"></i></button>
+              <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#PaisModalElimiar" onclick="EliminarValid(<?php echo $valor['id'] ?>);"><i class="bi bi-recycle"></i></button>
             </th>
 
           </tr>

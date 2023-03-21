@@ -38,8 +38,12 @@ class EmpleadosModel extends Model
     }
     public function obtenerEmpleadosEliminados()
     {
-        $this->select('empleados.*');
-        $this->where('estado', 'I');
+        $this->select('empleados.*, municipios.nombre as NMuni, cargos.nombre as NCargo, salarios.sueldo as salario');
+        $this->join('municipios', 'municipios.id = empleados.id_municipio');
+        $this->join('cargos', 'cargos.id = empleados.id_cargo');
+        $this->join('salarios', 'salarios.id_empleado = empleados.id', 'left');
+        $this->where('empleados.estado', 'I');
+        // $this->orderBy('id'); // ordena por el nombre de los empleados en orden alfabético ascendente
         $datos = $this->findAll();
         return $datos;
     }

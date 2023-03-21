@@ -1,6 +1,6 @@
 <div class="container card my-4">
   <div>
-    <h1 class="titulo_Vista text-center"><?php echo $titulo ?></h1>
+    <h1 class="titulo_Vista text-center color:#0D6EFD"><?php echo $titulo ?></h1>
   </div>
   <div>
     <a href="<?php echo base_url('/paises'); ?>" class="btn btn-primary regresar_Btn">Regresar</a>
@@ -10,7 +10,7 @@
   <div class="table-responsive">
   <table class="table table-bordered border-primary">
   <thead class="table-light">
-    <tr style="color:#98040a;font-weight:300;text-align:center;font-family:Arial;font-size:14px;">
+    <tr style="color:#0D6EFD;font-weight:300;text-align:center;font-family:Arial;font-size:14px;">
           <th>Id</th>
           <th>Nombre</th>
           <th>Pais</th>
@@ -40,7 +40,7 @@
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5 text-center" id="exampleModalLabel">¿Desea Restaurar este Dpto?</h1>
+            <h1 class="modal-title fs-5 text-center" id="exampleModalLabel">¿Desea Restaurar este Departamento?</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">

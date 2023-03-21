@@ -12,7 +12,7 @@
   <div class="table-responsive">
   <table class="table table-bordered border-primary">
   <thead class="table-light">
-    <tr style="color:#98040a;font-weight:300;text-align:center;font-family:Arial;font-size:14px;">
+    <tr style="color:#0D6EFD;font-weight:300;text-align:center;font-family:Arial;font-size:14px;">
           <th>Id</th>
           <th>Nombre</th>
           <th>País</th>
@@ -29,10 +29,10 @@
             <th class="text-center"><?php echo $valor['estado']; ?></th>
             <th class="grid grid text-center" colspan="2">
               <button class="btn btn-outline-primary" onclick="seleccionaDpto(<?php echo $valor['id'] . ',' . 2 ?>);" data-bs-toggle="modal" data-bs-target="#DptoModal">
-                <i class="bi bi-pencil"></i></button>
+              <i class="bi bi-pen"></i></button>
 
               <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#DeptoEliminar" onclick="EliminarValid(<?php echo $valor['id'] ?>);">
-                <i class="bi bi-trash3"></i>
+              <i class="bi bi-recycle"></i>
               </button>
             </th>
 

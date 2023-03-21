@@ -17,7 +17,7 @@ class Paises extends BaseController
     {
         $pais = $this->pais->obtenerPaises();
 
-        $data = ['titulo' => 'Administrar Paises', 'nombre' => 'Camilo', 'datos' => $pais];
+        $data = ['titulo' => ' Paises', 'nombre' => 'Camilo', 'datos' => $pais];
         echo view('/principal/header', $data);
         echo view('/paises/paises', $data);
     }
@@ -29,7 +29,7 @@ class Paises extends BaseController
         if (!$eliminados) {
             echo view('/errors/html/no_eliminados');
         } else {
-            $data = ['titulo' => 'Administrar Paises Eliminados', 'nombre' => 'Camilo', 'datos' => $eliminados];
+            $data = ['titulo' => ' Paises Eliminados', 'nombre' => 'Camilo', 'datos' => $eliminados];
             echo view('/principal/header', $data);
             echo view('/paises/eliminados', $data);
         }
