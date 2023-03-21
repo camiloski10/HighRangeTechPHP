@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #242629;
+}
+.containerH {
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    justify-content: space-between;
+    background-color: #16161a;
+    color: #fffffe;
+}
+
+.container-nav {
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #16161a;
+    color: #fffffe;
+}
+
+.boton-nav {
+    height: 50%;
+    align-items: center;
+}
+
+.logosena img{
+    width: 80px;
+    height: 80px;
+}

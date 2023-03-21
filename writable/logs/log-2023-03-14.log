@@ -1,0 +1,7 @@
+CRITICAL - 2023-03-14 16:42:28 --> Undefined property: App\Controllers\Paises::$paises
+in APPPATH\Controllers\Paises.php on line 18.
+ 1 APPPATH\Controllers\Paises.php(18): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Paises::$paises', 'APPPATH\\Controllers\\Paises.php', 18)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Paises->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Paises))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
