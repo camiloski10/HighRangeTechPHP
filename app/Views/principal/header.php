@@ -2,8 +2,8 @@
 <html lang="es">
 
 <head>
-  <title>Cuentas Claras</title>
-  <link rel="icon" type="ima  ge/svg+xml" href="<?php echo base_url() ?>/favicon.ico" />
+  <title>High Range Tech</title>
+  <link rel="icon" type="ima  ge/svg+xml" href="<?php echo base_url() ?>/highrangetech.png" />
   <meta charset="utf-8" />
   <link rel="stylesheet" href="<?php echo base_url() ?>/css/header.css">
   <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"

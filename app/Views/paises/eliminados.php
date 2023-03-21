@@ -1,9 +1,9 @@
 <div class="container card my-4">
   <div>
-    <h1 class="titulo_Vista text-center"><?php echo $titulo ?></h1>
+    <h1 class="titulo_Vista text-center" style="color:#0D6EFD;"><?php echo $titulo ?></h1>
   </div>
   <div>
-    <a href="<?php echo base_url('/paises'); ?>" class="btn btn-primary regresar_Btn">Regresar</a>
+    <a href="<?php echo base_url('/paises'); ?>" class="btn btn-outline-primary regresar_Btn">Regresar</a>
   </div>
 
   <br>

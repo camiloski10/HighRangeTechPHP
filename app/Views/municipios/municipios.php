@@ -3,9 +3,9 @@
     <h1 class="titulo_Vista text-center" style="color:#0D6EFD;"><?php echo $titulo ?></h1>
   </div>
   <div>
-    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#MuniModal">Agregar</button>
-    <button type="button" class="btn btn-secondary">Eliminados</button>
-    <a href="<?php echo base_url('/principal'); ?>" class="btn btn-primary regresar_Btn">Regresar</a>
+    <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#MuniModal">Agregar</button>
+    <a href="<?php echo base_url('/municipios/eliminados'); ?>"><button type="button" class="btn btn-outline-secondary">Eliminados</button></a>
+    <a href="<?php echo base_url('/principal'); ?>" class="btn btn-outline-primary regresar_Btn">Regresar</a>
   </div>
 
   <br>
@@ -28,8 +28,10 @@
             <th class="text-center"><?php echo $valor['Departamento']; ?></th>
             <th class="text-center"><?php echo $valor['estado']; ?></th>
             <th class="grid grid text-center" colspan="2">
-              <button class="btn btn-outline-primary"><i class="bi bi-pen"></i></button>
-              <button class="btn btn-outline-danger">
+            <button class="btn btn-outline-primary" onclick="seleccionaMunicipio(<?php echo $valor['id'] . ',' . 2 ?>);" data-bs-toggle="modal" data-bs-target="#MunicipioModal">
+              <i class="bi bi-pen"></i></button>
+
+              <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#MunicipioEliminar" onclick="EliminarValid(<?php echo $valor['id'] ?>);">
               <i class="bi bi-recycle"></i>
               </button>
             </th>
@@ -39,7 +41,29 @@
   </tbody>
 </table>
 </div>
-
+<form method="POST" action="<?php echo base_url('/municipios/cambiarEstado'); ?>" class="form-check-inline">
+  <div class="modal fade" id="MunicipioEliminar" tabindex="-1" aria-labelledby="MunicipioModalEliminar" aria-hidden="true" data-bs-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5 text-center" id="exampleModalLabel">¿Estás seguro de eliminar este Municipio?</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <span>
+            <h3 class="text-center" id="MunicipioEliminar"></h3>
+          </span>
+          <input type="text" id="idE" name="id" hidden>
+          <input type="text" id="estado" name="estado" hidden>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="submit" class="btn btn-danger">Eliminar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
   <form method="POST" action="<?php echo base_url('/municipios/insertar'); ?>" autocomplete="off" class="needs-validation" novalidate>
     <div class="modal fade" id="MuniModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
       <div class="modal-dialog modal-dialog-centered">
@@ -102,4 +126,50 @@
       })
     })
   })
+  function seleccionaMunicipio(id, tp) {
+    if (tp == 2) {
+      dataURL = "<?php echo base_url('/municipios/buscar_municipio'); ?>" + "/" + id;
+      $.ajax({
+        type: "POST",
+        url: dataURL,
+        dataType: "json",
+        success: function(rs) {
+          console.log(rs)
+          $("#tp").val(2);
+          $("#id").val(rs[0]['id'])
+          $("#Seleccionado").val(rs[0]['id_dpto']);
+          $("#Seleccionado").text(rs[0]['Departamento']);
+          $("#nombre").val(rs[0]['nombre']);
+          $("#btn_Guardar").text('Actualizar');
+          $("#tituloModal").text('Actualizar el municipio ' + rs[0]['nombre']);
+          $("#DptoModal").modal("show");
+        }
+      })
+    } else {
+      $("#tp").val(1);
+      $("#id").val('');
+      $("#nombre").val('');
+      $("#Seleccionado").val('');
+      $("#Seleccionado").text('');
+      $("#btn_Guardar").text('Guardar');
+      $("#tituloModal").text('Agregar Nuevo Municipio');
+      $("#DptoModal").modal("show");
+    }
+  };
+
+  function EliminarValid(id) {
+    dataURL = "<?php echo base_url('/municipios/buscar_municipio'); ?>" + "/" + id;
+    console.log(id)
+    $.ajax({
+      type: "POST",
+      url: dataURL,
+      dataType: "json",
+      success: function(rs) {
+        $("#idE").val(rs[0]['id'])
+        $("#estado").val('I');
+        $("#MunicipioEliminar").text(rs[0]['nombre']);
+        $("#MunicipioModalEliminar").modal("show");
+      }
+    })
+  }
 </script>

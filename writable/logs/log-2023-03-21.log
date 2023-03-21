@@ -1,11 +1,450 @@
-CRITICAL - 2023-03-21 13:09:39 --> Undefined array key "NMuni"
-in APPPATH\Views\empleados\eliminados.php on line 32.
- 1 APPPATH\Views\empleados\eliminados.php(32): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "NMuni"', 'APPPATH\\Views\\empleados\\eliminados.php', 32)
- 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\empleados\\eliminados.php')
- 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('/empleados/eliminados', [], true)
- 5 APPPATH\Controllers\Empleados.php(46): view('/empleados/eliminados', [...])
- 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Empleados->eliminados()
- 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
+ERROR - 2023-03-21 16:29:02 --> mysqli_sql_exception: Unknown table 'bd_taller.muncipios' in C:\xampp\htdocs\HighRangeTechPHP\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\HighRangeTechPHP\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `muncipi...', 0)
+#1 C:\xampp\htdocs\HighRangeTechPHP\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `muncipi...')
+#2 C:\xampp\htdocs\HighRangeTechPHP\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `muncipi...')
+#3 C:\xampp\htdocs\HighRangeTechPHP\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `muncipi...', Array, false)
+#4 C:\xampp\htdocs\HighRangeTechPHP\system\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\HighRangeTechPHP\system\BaseModel.php(656): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\HighRangeTechPHP\app\Models\MunicipiosModel.php(41): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\HighRangeTechPHP\app\Controllers\Municipios.php(65): App\Models\MunicipiosModel->traer_municipio('22')
+#8 C:\xampp\htdocs\HighRangeTechPHP\system\CodeIgniter.php(934): App\Controllers\Municipios->buscar_municipio('22')
+#9 C:\xampp\htdocs\HighRangeTechPHP\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Municipios))
+#10 C:\xampp\htdocs\HighRangeTechPHP\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\HighRangeTechPHP\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-03-21 16:29:02 --> Unknown table 'bd_taller.muncipios'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `muncipios`.*, `departamentos`.`nombre` as `Departamento`
+FROM `municipios`
+JOIN `departamentos` ON `departamentos`.`id` = `municipios`.`id_dpto`
+WHERE `municipios`.`id` = :municipios.id:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(656): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Models\MunicipiosModel.php(41): CodeIgniter\BaseModel->first()
+ 5 APPPATH\Controllers\Municipios.php(65): App\Models\MunicipiosModel->traer_municipio('22')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Municipios->buscar_municipio('22')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Municipios))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-03-21 16:29:03 --> mysqli_sql_exception: Unknown table 'bd_taller.muncipios' in C:\xampp\htdocs\HighRangeTechPHP\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\HighRangeTechPHP\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `muncipi...', 0)
+#1 C:\xampp\htdocs\HighRangeTechPHP\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `muncipi...')
+#2 C:\xampp\htdocs\HighRangeTechPHP\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `muncipi...')
+#3 C:\xampp\htdocs\HighRangeTechPHP\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `muncipi...', Array, false)
+#4 C:\xampp\htdocs\HighRangeTechPHP\system\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\HighRangeTechPHP\system\BaseModel.php(656): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\HighRangeTechPHP\app\Models\MunicipiosModel.php(41): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\HighRangeTechPHP\app\Controllers\Municipios.php(65): App\Models\MunicipiosModel->traer_municipio('22')
+#8 C:\xampp\htdocs\HighRangeTechPHP\system\CodeIgniter.php(934): App\Controllers\Municipios->buscar_municipio('22')
+#9 C:\xampp\htdocs\HighRangeTechPHP\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Municipios))
+#10 C:\xampp\htdocs\HighRangeTechPHP\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\HighRangeTechPHP\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-03-21 16:29:03 --> Unknown table 'bd_taller.muncipios'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `muncipios`.*, `departamentos`.`nombre` as `Departamento`
+FROM `municipios`
+JOIN `departamentos` ON `departamentos`.`id` = `municipios`.`id_dpto`
+WHERE `municipios`.`id` = :municipios.id:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(656): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Models\MunicipiosModel.php(41): CodeIgniter\BaseModel->first()
+ 5 APPPATH\Controllers\Municipios.php(65): App\Models\MunicipiosModel->traer_municipio('22')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Municipios->buscar_municipio('22')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Municipios))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-03-21 16:29:04 --> mysqli_sql_exception: Unknown table 'bd_taller.muncipios' in C:\xampp\htdocs\HighRangeTechPHP\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\HighRangeTechPHP\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `muncipi...', 0)
+#1 C:\xampp\htdocs\HighRangeTechPHP\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `muncipi...')
+#2 C:\xampp\htdocs\HighRangeTechPHP\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `muncipi...')
+#3 C:\xampp\htdocs\HighRangeTechPHP\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `muncipi...', Array, false)
+#4 C:\xampp\htdocs\HighRangeTechPHP\system\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\HighRangeTechPHP\system\BaseModel.php(656): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\HighRangeTechPHP\app\Models\MunicipiosModel.php(41): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\HighRangeTechPHP\app\Controllers\Municipios.php(65): App\Models\MunicipiosModel->traer_municipio('22')
+#8 C:\xampp\htdocs\HighRangeTechPHP\system\CodeIgniter.php(934): App\Controllers\Municipios->buscar_municipio('22')
+#9 C:\xampp\htdocs\HighRangeTechPHP\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Municipios))
+#10 C:\xampp\htdocs\HighRangeTechPHP\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\HighRangeTechPHP\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-03-21 16:29:04 --> Unknown table 'bd_taller.muncipios'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `muncipios`.*, `departamentos`.`nombre` as `Departamento`
+FROM `municipios`
+JOIN `departamentos` ON `departamentos`.`id` = `municipios`.`id_dpto`
+WHERE `municipios`.`id` = :municipios.id:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(656): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Models\MunicipiosModel.php(41): CodeIgniter\BaseModel->first()
+ 5 APPPATH\Controllers\Municipios.php(65): App\Models\MunicipiosModel->traer_municipio('22')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Municipios->buscar_municipio('22')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Municipios))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-03-21 16:29:06 --> mysqli_sql_exception: Unknown table 'bd_taller.muncipios' in C:\xampp\htdocs\HighRangeTechPHP\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\HighRangeTechPHP\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `muncipi...', 0)
+#1 C:\xampp\htdocs\HighRangeTechPHP\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `muncipi...')
+#2 C:\xampp\htdocs\HighRangeTechPHP\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `muncipi...')
+#3 C:\xampp\htdocs\HighRangeTechPHP\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `muncipi...', Array, false)
+#4 C:\xampp\htdocs\HighRangeTechPHP\system\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\HighRangeTechPHP\system\BaseModel.php(656): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\HighRangeTechPHP\app\Models\MunicipiosModel.php(41): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\HighRangeTechPHP\app\Controllers\Municipios.php(65): App\Models\MunicipiosModel->traer_municipio('22')
+#8 C:\xampp\htdocs\HighRangeTechPHP\system\CodeIgniter.php(934): App\Controllers\Municipios->buscar_municipio('22')
+#9 C:\xampp\htdocs\HighRangeTechPHP\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Municipios))
+#10 C:\xampp\htdocs\HighRangeTechPHP\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\HighRangeTechPHP\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-03-21 16:29:06 --> Unknown table 'bd_taller.muncipios'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `muncipios`.*, `departamentos`.`nombre` as `Departamento`
+FROM `municipios`
+JOIN `departamentos` ON `departamentos`.`id` = `municipios`.`id_dpto`
+WHERE `municipios`.`id` = :municipios.id:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(656): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Models\MunicipiosModel.php(41): CodeIgniter\BaseModel->first()
+ 5 APPPATH\Controllers\Municipios.php(65): App\Models\MunicipiosModel->traer_municipio('22')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Municipios->buscar_municipio('22')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Municipios))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-03-21 16:29:07 --> mysqli_sql_exception: Unknown table 'bd_taller.muncipios' in C:\xampp\htdocs\HighRangeTechPHP\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\HighRangeTechPHP\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `muncipi...', 0)
+#1 C:\xampp\htdocs\HighRangeTechPHP\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `muncipi...')
+#2 C:\xampp\htdocs\HighRangeTechPHP\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `muncipi...')
+#3 C:\xampp\htdocs\HighRangeTechPHP\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `muncipi...', Array, false)
+#4 C:\xampp\htdocs\HighRangeTechPHP\system\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\HighRangeTechPHP\system\BaseModel.php(656): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\HighRangeTechPHP\app\Models\MunicipiosModel.php(41): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\HighRangeTechPHP\app\Controllers\Municipios.php(65): App\Models\MunicipiosModel->traer_municipio('22')
+#8 C:\xampp\htdocs\HighRangeTechPHP\system\CodeIgniter.php(934): App\Controllers\Municipios->buscar_municipio('22')
+#9 C:\xampp\htdocs\HighRangeTechPHP\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Municipios))
+#10 C:\xampp\htdocs\HighRangeTechPHP\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\HighRangeTechPHP\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-03-21 16:29:07 --> Unknown table 'bd_taller.muncipios'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `muncipios`.*, `departamentos`.`nombre` as `Departamento`
+FROM `municipios`
+JOIN `departamentos` ON `departamentos`.`id` = `municipios`.`id_dpto`
+WHERE `municipios`.`id` = :municipios.id:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(656): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Models\MunicipiosModel.php(41): CodeIgniter\BaseModel->first()
+ 5 APPPATH\Controllers\Municipios.php(65): App\Models\MunicipiosModel->traer_municipio('22')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Municipios->buscar_municipio('22')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Municipios))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-03-21 16:29:48 --> mysqli_sql_exception: Unknown table 'bd_taller.muncipios' in C:\xampp\htdocs\HighRangeTechPHP\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\HighRangeTechPHP\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `muncipi...', 0)
+#1 C:\xampp\htdocs\HighRangeTechPHP\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `muncipi...')
+#2 C:\xampp\htdocs\HighRangeTechPHP\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `muncipi...')
+#3 C:\xampp\htdocs\HighRangeTechPHP\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `muncipi...', Array, false)
+#4 C:\xampp\htdocs\HighRangeTechPHP\system\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\HighRangeTechPHP\system\BaseModel.php(656): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\HighRangeTechPHP\app\Models\MunicipiosModel.php(41): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\HighRangeTechPHP\app\Controllers\Municipios.php(65): App\Models\MunicipiosModel->traer_municipio('22')
+#8 C:\xampp\htdocs\HighRangeTechPHP\system\CodeIgniter.php(934): App\Controllers\Municipios->buscar_municipio('22')
+#9 C:\xampp\htdocs\HighRangeTechPHP\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Municipios))
+#10 C:\xampp\htdocs\HighRangeTechPHP\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\HighRangeTechPHP\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-03-21 16:29:48 --> Unknown table 'bd_taller.muncipios'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `muncipios`.*, `departamentos`.`nombre` as `Departamento`
+FROM `municipios`
+JOIN `departamentos` ON `departamentos`.`id` = `municipios`.`id_dpto`
+WHERE `municipios`.`id` = :municipios.id:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(656): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Models\MunicipiosModel.php(41): CodeIgniter\BaseModel->first()
+ 5 APPPATH\Controllers\Municipios.php(65): App\Models\MunicipiosModel->traer_municipio('22')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Municipios->buscar_municipio('22')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Municipios))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-03-21 16:29:49 --> mysqli_sql_exception: Unknown table 'bd_taller.muncipios' in C:\xampp\htdocs\HighRangeTechPHP\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\HighRangeTechPHP\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `muncipi...', 0)
+#1 C:\xampp\htdocs\HighRangeTechPHP\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `muncipi...')
+#2 C:\xampp\htdocs\HighRangeTechPHP\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `muncipi...')
+#3 C:\xampp\htdocs\HighRangeTechPHP\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `muncipi...', Array, false)
+#4 C:\xampp\htdocs\HighRangeTechPHP\system\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\HighRangeTechPHP\system\BaseModel.php(656): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\HighRangeTechPHP\app\Models\MunicipiosModel.php(41): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\HighRangeTechPHP\app\Controllers\Municipios.php(65): App\Models\MunicipiosModel->traer_municipio('22')
+#8 C:\xampp\htdocs\HighRangeTechPHP\system\CodeIgniter.php(934): App\Controllers\Municipios->buscar_municipio('22')
+#9 C:\xampp\htdocs\HighRangeTechPHP\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Municipios))
+#10 C:\xampp\htdocs\HighRangeTechPHP\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\HighRangeTechPHP\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-03-21 16:29:49 --> Unknown table 'bd_taller.muncipios'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `muncipios`.*, `departamentos`.`nombre` as `Departamento`
+FROM `municipios`
+JOIN `departamentos` ON `departamentos`.`id` = `municipios`.`id_dpto`
+WHERE `municipios`.`id` = :municipios.id:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(656): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Models\MunicipiosModel.php(41): CodeIgniter\BaseModel->first()
+ 5 APPPATH\Controllers\Municipios.php(65): App\Models\MunicipiosModel->traer_municipio('22')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Municipios->buscar_municipio('22')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Municipios))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-03-21 16:33:10 --> mysqli_sql_exception: Unknown table 'bd_taller.muncipios' in C:\xampp\htdocs\HighRangeTechPHP\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\HighRangeTechPHP\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `muncipi...', 0)
+#1 C:\xampp\htdocs\HighRangeTechPHP\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `muncipi...')
+#2 C:\xampp\htdocs\HighRangeTechPHP\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `muncipi...')
+#3 C:\xampp\htdocs\HighRangeTechPHP\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `muncipi...', Array, false)
+#4 C:\xampp\htdocs\HighRangeTechPHP\system\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\HighRangeTechPHP\system\BaseModel.php(656): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\HighRangeTechPHP\app\Models\MunicipiosModel.php(41): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\HighRangeTechPHP\app\Controllers\Municipios.php(65): App\Models\MunicipiosModel->traer_municipio('22')
+#8 C:\xampp\htdocs\HighRangeTechPHP\system\CodeIgniter.php(934): App\Controllers\Municipios->buscar_municipio('22')
+#9 C:\xampp\htdocs\HighRangeTechPHP\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Municipios))
+#10 C:\xampp\htdocs\HighRangeTechPHP\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\HighRangeTechPHP\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-03-21 16:33:10 --> Unknown table 'bd_taller.muncipios'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `muncipios`.*, `departamentos`.`nombre` as `Departamento`
+FROM `municipios`
+JOIN `departamentos` ON `departamentos`.`id` = `municipios`.`id_dpto`
+WHERE `municipios`.`id` = :municipios.id:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(656): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Models\MunicipiosModel.php(41): CodeIgniter\BaseModel->first()
+ 5 APPPATH\Controllers\Municipios.php(65): App\Models\MunicipiosModel->traer_municipio('22')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Municipios->buscar_municipio('22')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Municipios))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-03-21 16:33:11 --> mysqli_sql_exception: Unknown table 'bd_taller.muncipios' in C:\xampp\htdocs\HighRangeTechPHP\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\HighRangeTechPHP\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `muncipi...', 0)
+#1 C:\xampp\htdocs\HighRangeTechPHP\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `muncipi...')
+#2 C:\xampp\htdocs\HighRangeTechPHP\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `muncipi...')
+#3 C:\xampp\htdocs\HighRangeTechPHP\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `muncipi...', Array, false)
+#4 C:\xampp\htdocs\HighRangeTechPHP\system\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\HighRangeTechPHP\system\BaseModel.php(656): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\HighRangeTechPHP\app\Models\MunicipiosModel.php(41): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\HighRangeTechPHP\app\Controllers\Municipios.php(65): App\Models\MunicipiosModel->traer_municipio('22')
+#8 C:\xampp\htdocs\HighRangeTechPHP\system\CodeIgniter.php(934): App\Controllers\Municipios->buscar_municipio('22')
+#9 C:\xampp\htdocs\HighRangeTechPHP\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Municipios))
+#10 C:\xampp\htdocs\HighRangeTechPHP\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\HighRangeTechPHP\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-03-21 16:33:11 --> Unknown table 'bd_taller.muncipios'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `muncipios`.*, `departamentos`.`nombre` as `Departamento`
+FROM `municipios`
+JOIN `departamentos` ON `departamentos`.`id` = `municipios`.`id_dpto`
+WHERE `municipios`.`id` = :municipios.id:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(656): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Models\MunicipiosModel.php(41): CodeIgniter\BaseModel->first()
+ 5 APPPATH\Controllers\Municipios.php(65): App\Models\MunicipiosModel->traer_municipio('22')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Municipios->buscar_municipio('22')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Municipios))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-03-21 16:33:50 --> mysqli_sql_exception: Unknown table 'bd_taller.muncipios' in C:\xampp\htdocs\HighRangeTechPHP\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\HighRangeTechPHP\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `muncipi...', 0)
+#1 C:\xampp\htdocs\HighRangeTechPHP\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `muncipi...')
+#2 C:\xampp\htdocs\HighRangeTechPHP\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `muncipi...')
+#3 C:\xampp\htdocs\HighRangeTechPHP\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `muncipi...', Array, false)
+#4 C:\xampp\htdocs\HighRangeTechPHP\system\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\HighRangeTechPHP\system\BaseModel.php(656): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\HighRangeTechPHP\app\Models\MunicipiosModel.php(41): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\HighRangeTechPHP\app\Controllers\Municipios.php(65): App\Models\MunicipiosModel->traer_municipio('22')
+#8 C:\xampp\htdocs\HighRangeTechPHP\system\CodeIgniter.php(934): App\Controllers\Municipios->buscar_municipio('22')
+#9 C:\xampp\htdocs\HighRangeTechPHP\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Municipios))
+#10 C:\xampp\htdocs\HighRangeTechPHP\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\HighRangeTechPHP\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-03-21 16:33:50 --> Unknown table 'bd_taller.muncipios'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `muncipios`.*, `departamentos`.`nombre` as `Departamento`
+FROM `municipios`
+JOIN `departamentos` ON `departamentos`.`id` = `municipios`.`id_dpto`
+WHERE `municipios`.`id` = :municipios.id:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(656): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Models\MunicipiosModel.php(41): CodeIgniter\BaseModel->first()
+ 5 APPPATH\Controllers\Municipios.php(65): App\Models\MunicipiosModel->traer_municipio('22')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Municipios->buscar_municipio('22')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Municipios))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-03-21 16:35:12 --> mysqli_sql_exception: Unknown table 'bd_taller.muncipios' in C:\xampp\htdocs\HighRangeTechPHP\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\HighRangeTechPHP\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `muncipi...', 0)
+#1 C:\xampp\htdocs\HighRangeTechPHP\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `muncipi...')
+#2 C:\xampp\htdocs\HighRangeTechPHP\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `muncipi...')
+#3 C:\xampp\htdocs\HighRangeTechPHP\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `muncipi...', Array, false)
+#4 C:\xampp\htdocs\HighRangeTechPHP\system\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\HighRangeTechPHP\system\BaseModel.php(656): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\HighRangeTechPHP\app\Models\MunicipiosModel.php(41): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\HighRangeTechPHP\app\Controllers\Municipios.php(65): App\Models\MunicipiosModel->traer_municipio('18')
+#8 C:\xampp\htdocs\HighRangeTechPHP\system\CodeIgniter.php(934): App\Controllers\Municipios->buscar_municipio('18')
+#9 C:\xampp\htdocs\HighRangeTechPHP\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Municipios))
+#10 C:\xampp\htdocs\HighRangeTechPHP\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\HighRangeTechPHP\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-03-21 16:35:12 --> Unknown table 'bd_taller.muncipios'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `muncipios`.*, `departamentos`.`nombre` as `Departamento`
+FROM `municipios`
+JOIN `departamentos` ON `departamentos`.`id` = `municipios`.`id_dpto`
+WHERE `municipios`.`id` = :municipios.id:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(656): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Models\MunicipiosModel.php(41): CodeIgniter\BaseModel->first()
+ 5 APPPATH\Controllers\Municipios.php(65): App\Models\MunicipiosModel->traer_municipio('18')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Municipios->buscar_municipio('18')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Municipios))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-03-21 16:35:26 --> mysqli_sql_exception: Unknown table 'bd_taller.muncipios' in C:\xampp\htdocs\HighRangeTechPHP\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\HighRangeTechPHP\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `muncipi...', 0)
+#1 C:\xampp\htdocs\HighRangeTechPHP\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `muncipi...')
+#2 C:\xampp\htdocs\HighRangeTechPHP\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `muncipi...')
+#3 C:\xampp\htdocs\HighRangeTechPHP\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `muncipi...', Array, false)
+#4 C:\xampp\htdocs\HighRangeTechPHP\system\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\HighRangeTechPHP\system\BaseModel.php(656): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\HighRangeTechPHP\app\Models\MunicipiosModel.php(41): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\HighRangeTechPHP\app\Controllers\Municipios.php(65): App\Models\MunicipiosModel->traer_municipio('18')
+#8 C:\xampp\htdocs\HighRangeTechPHP\system\CodeIgniter.php(934): App\Controllers\Municipios->buscar_municipio('18')
+#9 C:\xampp\htdocs\HighRangeTechPHP\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Municipios))
+#10 C:\xampp\htdocs\HighRangeTechPHP\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\HighRangeTechPHP\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-03-21 16:35:26 --> Unknown table 'bd_taller.muncipios'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `muncipios`.*, `departamentos`.`nombre` as `Departamento`
+FROM `municipios`
+JOIN `departamentos` ON `departamentos`.`id` = `municipios`.`id_dpto`
+WHERE `municipios`.`id` = :municipios.id:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(656): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Models\MunicipiosModel.php(41): CodeIgniter\BaseModel->first()
+ 5 APPPATH\Controllers\Municipios.php(65): App\Models\MunicipiosModel->traer_municipio('18')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Municipios->buscar_municipio('18')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Municipios))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-03-21 16:36:58 --> mysqli_sql_exception: Unknown table 'bd_taller.muncipios' in C:\xampp\htdocs\HighRangeTechPHP\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\HighRangeTechPHP\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `muncipi...', 0)
+#1 C:\xampp\htdocs\HighRangeTechPHP\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `muncipi...')
+#2 C:\xampp\htdocs\HighRangeTechPHP\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `muncipi...')
+#3 C:\xampp\htdocs\HighRangeTechPHP\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `muncipi...', Array, false)
+#4 C:\xampp\htdocs\HighRangeTechPHP\system\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\HighRangeTechPHP\system\BaseModel.php(656): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\HighRangeTechPHP\app\Models\MunicipiosModel.php(41): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\HighRangeTechPHP\app\Controllers\Municipios.php(65): App\Models\MunicipiosModel->traer_municipio('24')
+#8 C:\xampp\htdocs\HighRangeTechPHP\system\CodeIgniter.php(934): App\Controllers\Municipios->buscar_municipio('24')
+#9 C:\xampp\htdocs\HighRangeTechPHP\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Municipios))
+#10 C:\xampp\htdocs\HighRangeTechPHP\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\HighRangeTechPHP\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-03-21 16:36:58 --> Unknown table 'bd_taller.muncipios'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `muncipios`.*, `departamentos`.`nombre` as `Departamento`
+FROM `municipios`
+JOIN `departamentos` ON `departamentos`.`id` = `municipios`.`id_dpto`
+WHERE `municipios`.`id` = :municipios.id:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(656): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Models\MunicipiosModel.php(41): CodeIgniter\BaseModel->first()
+ 5 APPPATH\Controllers\Municipios.php(65): App\Models\MunicipiosModel->traer_municipio('24')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Municipios->buscar_municipio('24')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Municipios))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-03-21 16:39:29 --> mysqli_sql_exception: Unknown table 'bd_taller.muncipios' in C:\xampp\htdocs\HighRangeTechPHP\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\HighRangeTechPHP\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `muncipi...', 0)
+#1 C:\xampp\htdocs\HighRangeTechPHP\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `muncipi...')
+#2 C:\xampp\htdocs\HighRangeTechPHP\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `muncipi...')
+#3 C:\xampp\htdocs\HighRangeTechPHP\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `muncipi...', Array, false)
+#4 C:\xampp\htdocs\HighRangeTechPHP\system\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\HighRangeTechPHP\system\BaseModel.php(656): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\HighRangeTechPHP\app\Models\MunicipiosModel.php(41): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\HighRangeTechPHP\app\Controllers\Municipios.php(65): App\Models\MunicipiosModel->traer_municipio('22')
+#8 C:\xampp\htdocs\HighRangeTechPHP\system\CodeIgniter.php(934): App\Controllers\Municipios->buscar_municipio('22')
+#9 C:\xampp\htdocs\HighRangeTechPHP\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Municipios))
+#10 C:\xampp\htdocs\HighRangeTechPHP\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\HighRangeTechPHP\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-03-21 16:39:29 --> Unknown table 'bd_taller.muncipios'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `muncipios`.*, `departamentos`.`nombre` as `Departamento`
+FROM `municipios`
+JOIN `departamentos` ON `departamentos`.`id` = `municipios`.`id_dpto`
+WHERE `municipios`.`id` = :municipios.id:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(656): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Models\MunicipiosModel.php(41): CodeIgniter\BaseModel->first()
+ 5 APPPATH\Controllers\Municipios.php(65): App\Models\MunicipiosModel->traer_municipio('22')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Municipios->buscar_municipio('22')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Municipios))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-03-21 16:40:17 --> mysqli_sql_exception: Unknown table 'bd_taller.muncipios' in C:\xampp\htdocs\HighRangeTechPHP\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\HighRangeTechPHP\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `muncipi...', 0)
+#1 C:\xampp\htdocs\HighRangeTechPHP\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `muncipi...')
+#2 C:\xampp\htdocs\HighRangeTechPHP\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `muncipi...')
+#3 C:\xampp\htdocs\HighRangeTechPHP\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `muncipi...', Array, false)
+#4 C:\xampp\htdocs\HighRangeTechPHP\system\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\HighRangeTechPHP\system\BaseModel.php(656): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\HighRangeTechPHP\app\Models\MunicipiosModel.php(41): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\HighRangeTechPHP\app\Controllers\Municipios.php(65): App\Models\MunicipiosModel->traer_municipio('22')
+#8 C:\xampp\htdocs\HighRangeTechPHP\system\CodeIgniter.php(934): App\Controllers\Municipios->buscar_municipio('22')
+#9 C:\xampp\htdocs\HighRangeTechPHP\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Municipios))
+#10 C:\xampp\htdocs\HighRangeTechPHP\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\HighRangeTechPHP\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-03-21 16:40:17 --> Unknown table 'bd_taller.muncipios'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `muncipios`.*, `departamentos`.`nombre` as `Departamento`
+FROM `municipios`
+JOIN `departamentos` ON `departamentos`.`id` = `municipios`.`id_dpto`
+WHERE `municipios`.`id` = :municipios.id:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(656): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Models\MunicipiosModel.php(41): CodeIgniter\BaseModel->first()
+ 5 APPPATH\Controllers\Municipios.php(65): App\Models\MunicipiosModel->traer_municipio('22')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Municipios->buscar_municipio('22')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Municipios))
  8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

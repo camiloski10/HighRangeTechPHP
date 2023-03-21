@@ -1,11 +1,11 @@
 <div class="container card my-4">
   <div>
-    <h1 class="titulo_vista text-center"><?php echo $titulo; ?></h1>
+    <h1 class="titulo_vista text-center" style="color:#0D6EFD;"><?php echo $titulo; ?></h1>
 
   </div>
   <div>
-    <button type="button" class="btn btn-primary" href="#" data-bs-toggle="modal" data-bs-target="#modalAgregar" onclick="seleccionarEmp(<?php echo 1 . ',' . 1 ?>);">Agregar</button>
-   <a href="<?php echo base_url('/eliminados_empleados'); ?>"> <button type="button" class="btn btn-secondary">Eliminados</button></a>
+    <button type="button" class="btn btn-outline-primary" href="#" data-bs-toggle="modal" data-bs-target="#modalAgregar" onclick="seleccionarEmp(<?php echo 1 . ',' . 1 ?>);">Agregar</button>
+   <a href="<?php echo base_url('/eliminados_empleados'); ?>"> <button type="button" class="btn btn-outline-secondary">Eliminados</button></a>
   </div>
 
   <div id="layoutSidenav_content">
@@ -89,7 +89,7 @@
                 <label for="nombrecliente" class="col-form-label">Apellidos</label>
                 <input type="text" class="form-control" id="apellidos" name="apellidos" required>
                 <div class="mb-3">
-                  <label for="periodo" class="col-form-label">Periodo (Salario):</label>
+                  <label for="periodo" class="col-form-label">Nacimiento:</label>
                   <div class="flex ">
                     <select class="form-select" name="nacimiento" aria-label="periodo" id="nacimiento" required>
                       <option id="Seleccionado">-- Seleccionar Año --</option>

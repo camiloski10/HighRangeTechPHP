@@ -1,11 +1,11 @@
 <div class="container card my-4">
   <div>
-    <h1 class="titulo_Vista text-center"><?php echo $titulo ?></h1>
+    <h1 class="titulo_Vista text-center" style="color:#0D6EFD;"><?php echo $titulo ?></h1>
   </div>
   <div>
-    <button type="button" onclick="seleccionaPais(<?php echo 1 . ',' . 1 ?>);" class="btn btn-success " data-bs-toggle="modal" data-bs-target="#PaisModal">Agregar</button>
-    <a href="<?php echo base_url('/eliminados_paises'); ?>"><button type="button" class="btn btn-secondary">Eliminados</button></a>
-    <a href="<?php echo base_url('/principal'); ?>" class="btn btn-primary regresar_Btn">Regresar</a>
+    <button type="button" onclick="seleccionaPais(<?php echo 1 . ',' . 1 ?>);" class="btn btn-outline-success " data-bs-toggle="modal" data-bs-target="#PaisModal">Agregar</button>
+    <a href="<?php echo base_url('/eliminados_paises'); ?>"><button type="button" class="btn btn-outline-secondary">Eliminados</button></a>
+    <a href="<?php echo base_url('/principal'); ?>" class="btn btn-outline-primary regresar_Btn">Regresar</a>
   </div>
 
   <br>

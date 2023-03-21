@@ -33,4 +33,20 @@ class MunicipiosModel extends Model
         $datos = $this->findAll();
         return $datos;
     }
+    public function traer_municipio($id)
+    {
+        $this->select('muncipios.*, departamentos.nombre as Departamento');
+        $this->join('departamentos', 'departamentos.id = municipios.id_dpto');
+        $this->where('municipios.id', $id);
+        $datos = $this->first();  // nos trae el registro que cumpla con una condicion dada 
+        return $datos;
+    }
+    public function obtenerMunicipiosEliminados()
+    {
+        $this->select('municipios.*, departamentos.nombre as Departamento');
+        $this->join('departamentos', 'departamentos.id = municipios.id_dpto');
+        $this->where('municipios.estado', 'I');
+        $datos = $this->findAll();
+        return $datos;
+    }
 }

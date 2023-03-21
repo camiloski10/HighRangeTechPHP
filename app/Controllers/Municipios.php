@@ -9,7 +9,7 @@ use App\Models\DepartamentosModel;
 
 class Municipios extends BaseController
 {
-    protected $municipios;
+    protected $municipios, $eliminados;
     protected $pais;
     protected $departamentos;
     public function __construct()
@@ -23,9 +23,21 @@ class Municipios extends BaseController
         $municipios = $this->municipios->obtenerMunicipios();
         $pais = $this->pais->obtenerPaises();
 
-        $data = ['titulo' => 'Administrar Municipios', 'nombre' => 'Camilo', 'datos' => $municipios, 'paises' => $pais];
+        $data = ['titulo' => ' Municipios', 'nombre' => 'Camilo', 'datos' => $municipios, 'paises' => $pais];
         echo view('/principal/header', $data);
         echo view('/municipios/municipios', $data);
+    }
+    public function eliminados() //Mostrar vista de Municipios Eliminados
+    {
+        $eliminados = $this->municipios->obtenerMunicipiosEliminados();
+
+        if (!$eliminados) {
+            echo view('/errors/html/no_eliminados');
+        } else {
+            $data = ['titulo' => ' Municipios Eliminados', 'nombre' => 'Camilo', 'datos' => $eliminados];
+            echo view('/principal/header', $data);
+            echo view('/municipios/eliminados', $data);
+        }
     }
     public function obtenerDepartamentosPais($id)
     {
@@ -46,5 +58,30 @@ class Municipios extends BaseController
             ]);
             return redirect()->to(base_url('/municipios'));
         }
+    }
+    public function buscar_municipio($id) //Funcion para buscar un municipio en especifico y devolverlo 
+    {
+        $returnData = array();
+        $municipios_ = $this->municipios->traer_municipio($id);
+        if (!empty($muncipios_)) {
+            array_push($returnData, $municipios_);
+        }
+        echo json_encode($returnData);
+    }
+    public function cambiarEstado() //Eliminaer el municipio cambiando el estado = Borrado Logico
+    {
+        $this->municipios->update($this->request->getPost('id'), [
+            'estado' => $this->request->getPost('estado')
+        ]);
+
+        return redirect()->to(base_url('/municipios'));
+    }
+    public function Restaurar() //Restaurar pais cambiando el estado
+    {
+        $this->municipios->update($this->request->getPost('id'), [
+            'estado' => $this->request->getPost('estado')
+        ]);
+
+        return redirect()->to(base_url('/municipios/eliminados'));
     }
 }
