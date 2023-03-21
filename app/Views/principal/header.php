@@ -32,7 +32,7 @@
     <h6 style="text-align:center "><?php echo $nombre; ?></h2>
   </div>
   <a href="https://oferta.senasofiaplus.edu.co/sofia-oferta/" target="_blank" class="logosena">
-    <img src="<?php echo base_url(); ?>img/sena.png" alt="">
+    <img src="<?php echo base_url(); ?>img/logoSena.png" alt="">
   </a>
 
 </header>

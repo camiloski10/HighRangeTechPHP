@@ -32,7 +32,7 @@ class Departamentos extends BaseController
         if (!$eliminados) {
             echo view('/errors/html/no_eliminados');
         } else {
-            $data = ['titulo' => 'Administrar Dptos Eliminados', 'nombre' => 'Darell E', 'datos' => $eliminados];
+            $data = ['titulo' => 'Administrar Dptos Eliminados', 'nombre' => 'Camilo', 'datos' => $eliminados];
             echo view('/principal/header', $data);
             echo view('/departamentos/eliminados', $data);
         }

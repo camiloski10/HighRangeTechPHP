@@ -10,18 +10,18 @@
 
   <br>
   <div class="table-responsive">
-    <table class="table table-bordered table-sm table-striped" id="tablePaises" width="100%" cellspacing="0">
-      <thead>
-        <tr style="color:#98040a;font-weight:300;text-align:center;font-family:Arial;font-size:14px;">
+  <table class="table table-bordered border-primary">
+  <thead class="table-light">
+    <tr style="color:#98040a;font-weight:300;text-align:center;font-family:Arial;font-size:14px;">
           <th>Id</th>
           <th><abbr title="Codigo Telefonico">Codigo</abbr></th>
           <th>Nombre</th>
           <th>Estado</th>
           <th colspan="2">Acciones</th>
         </tr>
-      </thead>
-      <tbody style="font-family:Arial;font-size:12px;" class="table-group-divider">
-        <?php foreach ($datos as $x => $valor) { ?>
+  </thead>
+  <tbody>
+    <?php foreach ($datos as $x => $valor) { ?>
           <tr>
             <th class="text-center"><?php echo $valor['id']; ?></th>
             <th class="text-center">+<?php echo $valor['Codigo']; ?></th>
@@ -39,10 +39,9 @@
 
           </tr>
         <?php } ?>
-
-      </tbody>
-    </table>
-  </div>
+  </tbody>
+</table>
+</div>
   <!-- Modal -->
   <form method="POST" action="<?php echo base_url('/paises/insertar'); ?>" autocomplete="off" class="needs-validation" novalidate>
     <div class="modal fade" id="PaisModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">

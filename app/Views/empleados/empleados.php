@@ -5,7 +5,7 @@
   </div>
   <div>
     <button type="button" class="btn btn-primary" href="#" data-bs-toggle="modal" data-bs-target="#modalAgregar" onclick="seleccionarEmp(<?php echo 1 . ',' . 1 ?>);">Agregar</button>
-    <button type="button" class="btn btn-secondary">Eliminados</button>
+   <a href="<?php echo base_url('/eliminados_empleados'); ?>"> <button type="button" class="btn btn-secondary">Eliminados</button></a>
   </div>
 
   <div id="layoutSidenav_content">
@@ -13,9 +13,9 @@
     <br>
 
     <div class="table-responsive">
-      <table class="table table-bordered table-sm table-striped" id="tableEmpleados" style="width:90%">
-        <thead>
-          <tr style="font-family:Arial;font-size:12px;">
+    <table class="table table-bordered border-primary">
+  <thead class="table-light">
+    <tr style="font-family:Arial;font-size:12px;">
             <th>ID</th>
             <th>Nombres</th>
             <th>Apellidos</th>
@@ -25,10 +25,10 @@
             <th>Salario</th>
             <th>Estado</th>
             <th colspan="2">Acciones</th>
-          </tr>
-        </thead>
-        <tbody style="font-family:Arial;font-size:12px;">
-          <?php foreach ($datos as $x => $valor) { ?>
+     </tr>
+  </thead>
+  <tbody>
+    <?php foreach ($datos as $x => $valor) { ?>
             <tr>
               <th class="text-center"><?php echo $valor['id']; ?></th>
               <th class="text-center"><?php echo $valor['nombres']; ?></th>
@@ -40,17 +40,39 @@
               <th class="text-center"><?php echo $valor['estado']; ?></th>
               <th class="grid grid text-center" colspan="2">
                 <button class="btn btn-outline-primary" onclick="seleccionarEmp(<?php echo $valor['id'] . ',' . 2 ?>);"><i class="bi bi-pencil"></i></button>
-                <button class="btn btn-outline-danger">
-                  <i class="bi bi-trash3"></i>
-                </button>
+                <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#EmpleadoModalElimiar" onclick="EliminarValid(<?php echo $valor['id'] ?>);"><i class="bi bi-trash3"></i></button>
               </th>
 
             </tr>
           <?php } ?>
-
-        </tbody>
-      </table>
+  </tbody>
+</table>
+</div>
+<!--   Modal eliminar   --->
+<form method="POST" action="<?php echo base_url('/empleados/cambiarEstado'); ?>" class="form-check-inline">
+    <div class="modal fade" id="EmpleadoModalElimiar" tabindex="-1" aria-labelledby="EmpleadoModalElimiar" aria-hidden="true" data-bs-backdrop="static">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5 text-center" id="exampleModalLabel">¿Estás seguro de eliminar este empleado?</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <span>
+              <h3 class="text-center" id="EmpleadoEliminar"></h3>
+            </span>
+            <input type="text" id="idE" name="id" hidden>
+            <input type="text" id="estado" name="estado" hidden>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-danger">Eliminar</button>
+          </div>
+        </div>
+      </div>
     </div>
+  </form>
+</div>
 
     <!--   Modal agregar   --->
     <form method="POST" action="<?php echo base_url(); ?>/empleados/insertar" autocomplete="off">
@@ -119,8 +141,8 @@
               </div>
             </div>
             <div class="modal-footer">
-              <button type="submit" class="btn btn-primary">Save changes</button>
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
             </div>
           </div>
         </div>
@@ -129,6 +151,7 @@
   </div>
 
 </div>
+
 
 
 <script>
@@ -182,7 +205,7 @@
   };
 
   function EliminarValid(id) {
-    dataURL = "<?php echo base_url('/paises/buscar_Pais'); ?>" + "/" + id;
+    dataURL = "<?php echo base_url('/empleados/buscar_Emp'); ?>" + "/" + id;
     console.log(id)
     $.ajax({
       type: "POST",
@@ -191,8 +214,8 @@
       success: function(rs) {
         $("#idE").val(rs[0]['id'])
         $("#estado").val('I');
-        $("#PaisEliminar").text(rs[0]['nombre']);
-        $("#PaisModalElimiar").modal("show");
+        $("#empleadosEliminar").text(rs[0]['nombre']);
+        $("#EmpleadoModalElimiar").modal("show");
       }
     })
   }

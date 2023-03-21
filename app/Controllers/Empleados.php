@@ -10,7 +10,7 @@ use App\Models\SalariosModel;
 
 class Empleados extends BaseController
 {
-    protected $empleados;
+    protected $empleados, $eliminados;
     protected $municipios;
     protected $cargos;
     protected $salarios;
@@ -18,6 +18,7 @@ class Empleados extends BaseController
     public function __construct()
     {
         $this->empleados = new EmpleadosModel();
+        $this->eliminados = new EmpleadosModel();
         $this->municipios = new MunicipiosModel();
         $this->cargos = new CargosModel();
         $this->salarios = new SalariosModel();
@@ -32,6 +33,35 @@ class Empleados extends BaseController
         
         echo view('/principal/header', $data);
         echo view('/empleados/empleados', $data);
+    }
+    public function eliminados() //Mostrar vista de Empleados Eliminados
+    {
+        $eliminados = $this->eliminados->obtenerEmpleadosEliminados();
+
+        if (!$eliminados) {
+            echo view('/errors/html/no_eliminados');
+        } else {
+            $data = ['titulo' => 'Administrar Empleados Eliminados', 'nombre' => 'Camilo', 'datos' => $eliminados];
+            echo view('/principal/header', $data);
+            echo view('/empleados/eliminados', $data);
+        }
+    }
+    public function cambiarEstado() //Eliminar el empleado cambiando el estado = Borrado Logico
+    {
+        $this->empleados->update($this->request->getPost('id'), [
+            'estado' => $this->request->getPost('estado')
+        ]);
+
+        return redirect()->to(base_url('/empleados'));
+    }
+
+    public function Restaurar() //Restaurar pais cambiando el estado
+    {
+        $this->empleados->update($this->request->getPost('id'), [
+            'estado' => $this->request->getPost('estado')
+        ]);
+
+        return redirect()->to(base_url('/empleados/eliminados'));
     }
     public function buscar_Emp($id) //Funcion para buscar un pais en especifico y devolverlo 
     {

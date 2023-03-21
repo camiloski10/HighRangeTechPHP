@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: #242629;
+    background-color: cadetblue;
 }
 .containerH {
     height: 80px;
@@ -13,7 +13,7 @@ body {
     flex-direction: row;
     justify-items: center;
     justify-content: space-between;
-    background-color: #16161a;
+    background-color: cadetblue;
     color: #fffffe;
 }
 
@@ -23,7 +23,7 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    background-color: #16161a;
+    background-color: cadetblue;
     color: #fffffe;
 }
 
@@ -33,6 +33,7 @@ body {
 }
 
 .logosena img{
-    width: 80px;
-    height: 80px;
+    width: 50px;
+    height: 50px;
+    padding: 10px;
 }

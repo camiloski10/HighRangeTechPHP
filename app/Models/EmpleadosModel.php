@@ -36,6 +36,13 @@ class EmpleadosModel extends Model
         $datos = $this->findAll();
         return $datos;
     }
+    public function obtenerEmpleadosEliminados()
+    {
+        $this->select('empleados.*');
+        $this->where('estado', 'I');
+        $datos = $this->findAll();
+        return $datos;
+    }
     public function obtenerEmpleadoId($id)
     {
         $this->select('empleados.*');
