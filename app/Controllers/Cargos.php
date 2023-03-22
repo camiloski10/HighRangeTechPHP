@@ -51,6 +51,14 @@ class Cargos extends BaseController
             echo view('/cargos/eliminados', $data);
         }
     }
+    public function cambiarEstado() //Eliminar el cargo cambiando el estado = Borrado Logico
+    {
+        $this->cargos->update($this->request->getPost('id'), [
+            'estado' => $this->request->getPost('estado')
+        ]);
+
+        return redirect()->to(base_url('/cargos'));
+    }
     public function Restaurar() //Restaurar cargo cambiando el estado
     {
         $this->cargos->update($this->request->getPost('id'), [
