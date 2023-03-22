@@ -66,15 +66,19 @@ class Municipios extends BaseController
         if (!empty($muncipios_)) {
             array_push($returnData, $municipios_);
         }
-        echo json_encode($returnData);
+        echo json_encode($municipios_);
     }
-    public function cambiarEstado() //Eliminaer el municipio cambiando el estado = Borrado Logico
+    public function cambiarEstado($id, $estado)
     {
-        $this->municipios->update($this->request->getPost('id'), [
-            'estado' => $this->request->getPost('estado')
-        ]);
+        $municipio_ = $this->municipios->cambiar_Estado($id, $estado);
 
-        return redirect()->to(base_url('/municipios'));
+        if (
+            $estado == 'I'
+        ) {
+            return redirect()->to(base_url('/municipios'));
+        } else {
+            return redirect()->to(base_url('/municipios/eliminados'));
+        }
     }
     public function Restaurar() //Restaurar pais cambiando el estado
     {

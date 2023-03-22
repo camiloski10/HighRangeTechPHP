@@ -21,7 +21,7 @@
         </tr>
   </thead>
   <tbody>
-    <?php foreach ($datos as $x => $valor) { ?>
+    <?php foreach ($datos as $valor) { ?>
           <tr>
             <th class="text-center"><?php echo $valor['id']; ?></th>
             <th class="text-center"><?php echo $valor['nombre']; ?></th>
@@ -31,8 +31,7 @@
             <button class="btn btn-outline-primary" onclick="seleccionaMunicipio(<?php echo $valor['id'] . ',' . 2 ?>);" data-bs-toggle="modal" data-bs-target="#MunicipioModal">
               <i class="bi bi-pen"></i></button>
 
-              <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#MunicipioEliminar" onclick="EliminarValid(<?php echo $valor['id'] ?>);">
-              <i class="bi bi-recycle"></i>
+              <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#modal-confirma" data-href="<?php echo base_url('/municipios/cambiarEstado') . '/' . $valor['id'] . '/' . 'I'; ?>"><i class="bi bi-recycle"></i></button>
               </button>
             </th>
 
@@ -41,29 +40,25 @@
   </tbody>
 </table>
 </div>
-<form method="POST" action="<?php echo base_url('/municipios/cambiarEstado'); ?>" class="form-check-inline">
-  <div class="modal fade" id="MunicipioEliminar" tabindex="-1" aria-labelledby="MunicipioModalEliminar" aria-hidden="true" data-bs-backdrop="static">
-    <div class="modal-dialog modal-dialog-centered">
+<!-- Modal Confirma Eliminar -->
+<div class="modal fade" id="modal-confirma" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5 text-center" id="exampleModalLabel">¿Estás seguro de eliminar este Municipio?</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div style="text-align:center;" class="modal-header">
+          <h5 style="color:#98040a;font-size:20px;font-weight:bold;" class="modal-title" id="exampleModalLabel">Eliminación de Registro</h5>
+
         </div>
-        <div class="modal-body">
-          <span>
-            <h3 class="text-center" id="MunicipioEliminar"></h3>
-          </span>
-          <input type="text" id="idE" name="id" hidden>
-          <input type="text" id="estado" name="estado" hidden>
+        <div style="text-align:center;font-weight:bold;" class="modal-body">
+          <p>Seguro Desea Eliminar éste Registro?</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-          <button type="submit" class="btn btn-danger">Eliminar</button>
+          <button type="button" class="btn btn-outline-primary close" data-dismiss="modal">Cancelar</button>
+          <a class="btn btn-outline-danger btn-ok">Confirmar</a>
         </div>
       </div>
     </div>
   </div>
-</form>
+
   <form method="POST" action="<?php echo base_url('/municipios/insertar'); ?>" autocomplete="off" class="needs-validation" novalidate>
     <div class="modal fade" id="MuniModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
       <div class="modal-dialog modal-dialog-centered">
@@ -104,6 +99,10 @@
 </div>
 
 <script>
+  $('#modal-confirma').on('show.bs.modal', function(e) {
+      $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
+    });
+  
   $(document).ready(function() {
     //Cambio del select paises
     $('#selectPais').on('change', () => {
@@ -157,19 +156,12 @@
     }
   };
 
-  function EliminarValid(id) {
-    dataURL = "<?php echo base_url('/municipios/buscar_municipio'); ?>" + "/" + id;
-    console.log(id)
-    $.ajax({
-      type: "POST",
-      url: dataURL,
-      dataType: "json",
-      success: function(rs) {
-        $("#idE").val(rs[0]['id'])
-        $("#estado").val('I');
-        $("#MunicipioEliminar").text(rs[0]['nombre']);
-        $("#MunicipioModalEliminar").modal("show");
-      }
-    })
-  }
+
+    
+      
+    $('.close').click(function() {
+      
+      $("#modal-confirma").modal('hide');
+    
+    });
 </script>
