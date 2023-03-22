@@ -80,7 +80,7 @@ class Municipios extends BaseController
             return redirect()->to(base_url('/municipios/eliminados'));
         }
     }
-    public function Restaurar() //Restaurar pais cambiando el estado
+    public function Restaurar() //Restaurar municipio cambiando el estado
     {
         $this->municipios->update($this->request->getPost('id'), [
             'estado' => $this->request->getPost('estado')

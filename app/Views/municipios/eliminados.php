@@ -26,7 +26,7 @@
             <th class="text-center"><?php echo $valor['Departamento']; ?></th>
             <th class="text-center"><?php echo $valor['estado']; ?></th>
             <th class="grid grid text-center" colspan="2">
-              <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#PaisRestaurar" onclick="Restaurar(<?php echo $valor['id'] ?>);"><i class="bi bi-arrow-clockwise"></i></button>
+              <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#Restaurar" onclick="Restaurar(<?php echo $valor['id'] ?>);"><i class="bi bi-arrow-clockwise"></i></button>
             </th>
 
           </tr>
@@ -36,7 +36,7 @@
 </div>
 
   <form method="POST" action="<?php echo base_url('/municipios/Restaurar'); ?>" class="form-check-inline">
-    <div class="modal fade" id="Restaurar" tabindex="-1" aria-labelledby="Resturar" aria-hidden="true" data-bs-backdrop="static">
+    <div class="modal fade" id="Restaurar" tabindex="-1" aria-labelledby="Restaurar" aria-hidden="true" data-bs-backdrop="static">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
@@ -76,7 +76,12 @@
         $("#estado").val('A')
         $("#MunicipioRestaurar").text(rs[0]['nombre']);
         $("#Restaurar").modal("show");
+      },
+      error: function(xhr, status, error) {
+        console.log(xhr.responseText);
+        console.log(status);
+        console.log(error);
       }
-    })
+    });
   }
 </script>
