@@ -37,7 +37,15 @@ class Departamentos extends BaseController
             echo view('/departamentos/eliminados', $data);
         }
     }
-
+    public function obtenerDepartamentosPais($id)
+    {
+        $dataArray = array();
+        $departamentos = $this->departamentos->obtenerDepartamentosPais($id);
+        if (!empty($departamentos)) {
+            array_push($dataArray, $departamentos);
+        }
+        echo json_encode($departamentos);
+    }
     public function insertar() // Funcion para insertar y actualizar registros
     {
         $tp = $this->request->getPost('tp');

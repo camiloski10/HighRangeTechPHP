@@ -28,6 +28,7 @@
             <th class="grid grid text-center" colspan="2">
               <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#Restaurar" onclick="Restaurar(<?php echo $valor['id'] ?>);"><i class="bi bi-arrow-clockwise"></i></button>
             </th>
+            <!-- <td title="Activar Registro" data-bs-toggle="modal" data-bs-target="#Restaurar" href="#" data-href="<?php echo base_url('/municipios/eliminados') . '/' . $valor['id'] . '/' . 'A'; ?>"><i class="bi bi-arrow-clockwise"></i></td> -->
 
           </tr>
         <?php } ?>
@@ -40,14 +41,14 @@
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5 text-center" id="exampleModalLabel">¿Desea Restaurar este Departamento?</h1>
+            <h1 class="modal-title fs-5 text-center" id="exampleModalLabel">¿Desea Restaurar este Municipio?</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <span>
               <h3 class="text-center" id="MunicipioRestaurar"></h3>
             </span>
-            <input type="text" id="idR" name="id" hidden>
+            <input type="text" id="id" name="id" hidden>
             <input type="text" id="estado" name="estado" hidden>
           </div>
           <div class="modal-footer">
@@ -66,15 +67,17 @@
 <script>
   function Restaurar(id) {
     dataURL = "<?php echo base_url('/municipios/buscar_municipio'); ?>" + "/" + id;
-    console.log(id)
+    
     $.ajax({
       type: "POST",
       url: dataURL,
       dataType: "json",
       success: function(rs) {
-        $("#idR").val(rs[0]['id'])
+
+        console.log(rs)
+        $("#id").val(rs['id'])
         $("#estado").val('A')
-        $("#MunicipioRestaurar").text(rs[0]['nombre']);
+        $("#MunicipioRestaurar").text(rs['nombre']);
         $("#Restaurar").modal("show");
       },
       error: function(xhr, status, error) {

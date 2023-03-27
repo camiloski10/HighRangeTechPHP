@@ -3,7 +3,7 @@
     <h1 class="titulo_Vista text-center" style="color:#0D6EFD;"><?php echo $titulo ?></h1>
   </div>
   <div>
-    <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#MuniModal">Agregar</button>
+    <button type="button" onclick="seleccionaMunicipio(<?php echo 1 . ',' . 1 ?>);"  class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#MuniModal">Agregar</button>
     <a href="<?php echo base_url('/municipios/eliminados'); ?>"><button type="button" class="btn btn-outline-secondary">Eliminados</button></a>
     <a href="<?php echo base_url('/principal'); ?>" class="btn btn-outline-primary regresar_Btn">Regresar</a>
   </div>
@@ -28,7 +28,7 @@
             <th class="text-center"><?php echo $valor['Departamento']; ?></th>
             <th class="text-center"><?php echo $valor['estado']; ?></th>
             <th class="grid grid text-center" colspan="2">
-            <button class="btn btn-outline-primary" onclick="seleccionaMunicipio(<?php echo $valor['id'] . ',' . 2 ?>);" data-bs-toggle="modal" data-bs-target="#MunicipioModal">
+            <button class="btn btn-outline-primary" onclick="seleccionaMunicipio(<?php echo $valor['id'] . ',' . 2 ?>);" data-bs-toggle="modal" data-bs-target="#MuniModal">
               <i class="bi bi-pen"></i></button>
 
               <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#modal-confirma" data-href="<?php echo base_url('/municipios/cambiarEstado') . '/' . $valor['id'] . '/' . 'I'; ?>"><i class="bi bi-recycle"></i></button>
@@ -40,6 +40,7 @@
   </tbody>
 </table>
 </div>
+
 <!-- Modal Confirma Eliminar -->
 <div class="modal fade" id="modal-confirma" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -77,8 +78,9 @@
                 <?php } ?>
               </select>
               <label for="nombre" class="col-form-label">Departamento:</label>
-              <select name="departamento" id="departamento" class="form-select form-select-lg mb-3">
-
+              <select name="departamento" id="selectDepartamento" class="form-select form-select-lg mb-3">
+                <option selected>-Seleccione un Departamento</option>
+               
 
               </select>
               <label for="nombre" class="col-form-label">Nombre:</label>
@@ -113,7 +115,7 @@
         type: 'POST',
         dataType: 'json',
         success: function(res) {
-          console.log(res)
+          //console.log(res)
           var cadena
           cadena = `<option selected> ---Seleccionar Departamento---</option>`
           for (let i = 0; i < res.length; i++) {
@@ -125,6 +127,44 @@
       })
     })
   })
+  function seleccionarDepartamento(pais, id_dpto){
+    $.ajax({
+      url: "<?php echo base_url('municipios/obtenerDepartamentosPais/'); ?>" + pais,
+      type: 'POST',
+      dataType: 'json',
+      succes: function(res){
+        $('#selectDepartamento').empty();
+        //console.log(res)
+        var cadena
+        cadena= `<select name="departamento" id="departamento" class="form-select">
+        <option value="">Seleccionar Departamento</option></option>`
+        for (let i = 0; i < res.length; i++) {
+                  cadena+= `<option value="${res[i].id}">${res[i].nombre} </option>`
+      }
+      cadena += `</select>`
+      $('#departamento').html(cadena)
+      $('#departamento').val(id_dpto)
+    }
+    })
+  }
+  function llenar_Select(id, name, id_sel){
+    dataUrl="<?php echo base_url('obtenerDepartamentosPais') ?>" + '/' + id
+    $.ajax({
+      url: dataUrl,
+      type: 'POST',
+      dataType: 'json',
+      success: function(res) {
+        console.log(res);
+        $('#' +name).empty()
+        for (let i = 0; i < res.length; i++) {
+          let id = res[i]['id'];
+          let nombre = res[i]['nombre'];
+          $('#'+name).append("<option value='"+id+"'>"+nombre+"</option>");
+        }
+        if(id_sel!=0){$('#'+name).val(id_sel);}
+      }
+    }) 
+  }
   function seleccionaMunicipio(id, tp) {
     if (tp == 2) {
       dataURL = "<?php echo base_url('/municipios/buscar_municipio'); ?>" + "/" + id;
@@ -135,24 +175,27 @@
         success: function(rs) {
           console.log(rs)
           $("#tp").val(2);
-          $("#id").val(rs[0]['id'])
-          $("#Seleccionado").val(rs[0]['id_dpto']);
-          $("#Seleccionado").text(rs[0]['Departamento']);
-          $("#nombre").val(rs[0]['nombre']);
+          $("#id").val(rs['id'])
+          $("#selectPais").val(rs['id_pais']);
+          llenar_Select(rs['id_pais'], "selectDepartamento", rs['id_dpto'])
+          //$("#selectDepartamento").val(rs['id_dpto']);
+          //seleccionarDepartamento(rs['id_pais'], rs['id_dpto']);
+          $("#nombre").val(rs['nombre']);
           $("#btn_Guardar").text('Actualizar');
-          $("#tituloModal").text('Actualizar el municipio ' + rs[0]['nombre']);
-          $("#DptoModal").modal("show");
+          $("#tituloModal").text('Actualizar el municipio ' + rs['nombre']);
+          $("#MuniModal").modal("show");
         }
       })
     } else {
+      
       $("#tp").val(1);
       $("#id").val('');
       $("#nombre").val('');
-      $("#Seleccionado").val('');
-      $("#Seleccionado").text('');
+      $("#selectPais").val('');
+      $("#selectDepartamento").val('');
       $("#btn_Guardar").text('Guardar');
       $("#tituloModal").text('Agregar Nuevo Municipio');
-      $("#DptoModal").modal("show");
+      $("#MuniModal").modal("show");
     }
   };
 

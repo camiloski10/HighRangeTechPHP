@@ -22,8 +22,8 @@ class Municipios extends BaseController
     {
         $municipios = $this->municipios->obtenerMunicipios();
         $pais = $this->pais->obtenerPaises();
-
-        $data = ['titulo' => ' Municipios', 'nombre' => 'Camilo', 'datos' => $municipios, 'paises' => $pais];
+        $departamentos = $this->departamentos->obtenerDepartamentos();
+        $data = ['titulo' => ' Municipios', 'nombre' => 'Camilo', 'datos' => $municipios, 'paises' => $pais, 'departamentos' => $departamentos];
         echo view('/principal/header', $data);
         echo view('/municipios/municipios', $data);
     }
@@ -39,25 +39,26 @@ class Municipios extends BaseController
             echo view('/municipios/eliminados', $data);
         }
     }
-    public function obtenerDepartamentosPais($id)
-    {
-        $dataArray = array();
-        $departamentos = $this->departamentos->obtenerDepartamentosPais($id);
-        if (!empty($departamentos)) {
-            array_push($dataArray, $departamentos);
-        }
-        echo json_encode($departamentos);
-    }
+
     public function insertar()
     {
+        $tp = $this->request->getPost('tp');
         if ($this->request->getMethod() == "post") {
-
-            $this->municipios->save([
-                'id_dpto' => $this->request->getPost('departamento'),
-                'nombre' => $this->request->getPost('nombre')
-            ]);
+            if ($tp == 1) { //tp 1 = Guardar
+                $this->municipios->save([
+                    'id_dpto' => $this->request->getPost('departamento'),
+                    'nombre' => $this->request->getPost('nombre')
+                ]);
+            } else { //tp 2 = actualizar
+                $this->municipios->update($this->request->getPost('id'), [
+                    'id_pais' => $this->request->getPost('pais'),
+                    'id_dpto' => $this->request->getPost('departamento'),
+                    'nombre' => $this->request->getPost('nombre')
+                ]);
+            }
             return redirect()->to(base_url('/municipios'));
         }
+        
     }
     public function buscar_municipio($id) //Funcion para buscar un municipio en especifico y devolverlo 
     {
