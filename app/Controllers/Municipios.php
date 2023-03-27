@@ -39,7 +39,15 @@ class Municipios extends BaseController
             echo view('/municipios/eliminados', $data);
         }
     }
-
+    public function obtenerDepartamentosPais($id)
+    {
+        $dataArray = array();
+        $departamentos = $this->departamentos->obtenerDepartamentosPais($id);
+        if (!empty($departamentos)) {
+            array_push($dataArray, $departamentos);
+        }
+        echo json_encode($departamentos);
+    }
     public function insertar()
     {
         $tp = $this->request->getPost('tp');

@@ -36,6 +36,7 @@ $routes->get('/eliminados_empleados', 'empleados::eliminados');
 $routes->get('/eliminados_cargos', 'cargos::eliminados');
 $routes->get('/eliminados_municipios', 'municipios::eliminados');
 $routes->post('obtenerDepartamentosPais/(:num)', 'departamentos::obtenerDepartamentosPais/$1');
+$routes->post('obtenerDepartamentosPais/(:num)', 'municipios::obtenerDepartamentosPais/$1');
 // $routes->get('/paises/cambiarEstado/(:num)', 'Paises::cambiarEstado/$1');
 
 
