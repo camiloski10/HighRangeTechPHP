@@ -31,11 +31,17 @@ class Cargos extends BaseController
     }
     public function insertar()
     {
+        $tp = $this->request->getPost('tp');
         if ($this->request->getMethod() == "post") {
-
+            if ($tp == 1) {
             $this->cargos->save([
                 'nombre' => $this->request->getPost('nombre')
             ]);
+        }else {
+            $this->cargos->update($this->request->getPost('id'),[
+                'nombre' => $this->request->getPost('nombre')
+            ]);
+        }
             return redirect()->to(base_url('/cargos'));
         }
     }

@@ -71,13 +71,15 @@
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Añadir Cargo</h1>
+            <h1 class="modal-title fs-5" id="tituloModal">Añadir Cargo</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <div class="mb-3">
               <label for="nombre" class="col-form-label">Nombre:</label>
-              <input type="text" class="form-control" name="nombre" id="validationCustom01" required>
+              <input type="text" class="form-control" name="nombre" id="nombre" required>
+              <input hidden type="text" class="form-control" name="tp" id="tp" required>
+              <input hidden type="text" class="form-control" name="id" id="id" required>
             </div>
 
           </div>
@@ -93,6 +95,7 @@
 <script>
   function seleccionarCargo(id, tp) {
   if (tp == 2) {
+    
     dataURL = "<?php echo base_url('/cargos/buscar_Cargo'); ?>" + "/" + id;
     $.ajax({
       type: "POST",
