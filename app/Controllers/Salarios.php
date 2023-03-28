@@ -63,9 +63,12 @@ class Salarios extends BaseController
     {
         $salarios = $this->salarios->eliminados_salarios();
         $data = ['titulo' => 'Salarios Eliminados', 'titulo' => 'High Range Tech', 'nombre' => 'Camilo Castillo', 'salarios' => $salarios];
-
+        if (!$salarios) {
+            echo view('/errors/html/no_eliminados');
+        }else{
         echo view('/principal/header', $data);
         echo view('/salarios/eliminados', $data);
+        }
     }
 
     public function eliminar($id, $estado)
