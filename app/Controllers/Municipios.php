@@ -48,6 +48,15 @@ class Municipios extends BaseController
         }
         echo json_encode($departamentos);
     }
+    public function obtenerMunicipiosDepartamentos($id)
+    {
+        $dataArray = array();
+        $municipios = $this->municipios->obtenerMunicipiosDepartamentos($id);
+        if (!empty($municipios)) {
+            array_push($dataArray, $municipios);
+        }
+        echo json_encode($municipios);
+    }
     public function insertar()
     {
         $tp = $this->request->getPost('tp');

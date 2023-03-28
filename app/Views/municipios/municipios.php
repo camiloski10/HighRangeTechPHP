@@ -147,8 +147,31 @@
     }
     })
   }
+  $("#selectPais").on('change', function(){
+    pais = $("#selectPais").val();
+    llenar_Select(pais, "selectDepartamento", 0)
+  });
   function llenar_Select(id, name, id_sel){
     dataUrl="<?php echo base_url('obtenerDepartamentosPais') ?>" + '/' + id
+    $.ajax({
+      url: dataUrl,
+      type: 'POST',
+      dataType: 'json',
+      success: function(res) {
+        console.log(res);
+        $('#' +name).empty()
+        for (let i = 0; i < res.length; i++) {
+          let id = res[i]['id'];
+          let nombre = res[i]['nombre'];
+          $('#'+name).append("<option value='"+id+"'>"+nombre+"</option>");
+        }
+        if(id_sel!=0){$('#'+name).val(id_sel);}
+      }
+    }) 
+  }
+  
+  function llenar_SelectMuni(id, name, id_sel){
+    dataUrl="<?php echo base_url('obtenerMunicipiosDepartamentos') ?>" + '/' + id
     $.ajax({
       url: dataUrl,
       type: 'POST',
