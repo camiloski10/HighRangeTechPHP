@@ -48,7 +48,7 @@ class SalariosModel extends Model
     public function eliminados_salarios(){
         $this->select('salarios.*, empleados.nombres as nombre_empleado');
         $this->join('empleados','empleados.id = salarios.id_empleado');
-        $this->where('salarios.estado', 'E');
+        $this->where('salarios.estado', 'I');
         $datos = $this->findAll();  // nos trae todos los registros que cumplan con una condicion dada 
         return $datos;
     }

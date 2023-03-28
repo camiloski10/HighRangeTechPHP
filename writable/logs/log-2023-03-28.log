@@ -1,28 +1,6 @@
-CRITICAL - 2023-03-28 15:05:45 --> Undefined variable $datos
-in APPPATH\Views\salarios\eliminados.php on line 37.
- 1 APPPATH\Views\salarios\eliminados.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $datos', 'APPPATH\\Views\\salarios\\eliminados.php', 37)
- 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\salarios\\eliminados.php')
- 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('/salarios/eliminados', [], true)
- 5 APPPATH\Controllers\Salarios.php(68): view('/salarios/eliminados', [...])
- 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Salarios->eliminados()
- 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Salarios))
- 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
-CRITICAL - 2023-03-28 15:06:27 --> Undefined variable $empleado
-in APPPATH\Views\salarios\eliminados.php on line 37.
- 1 APPPATH\Views\salarios\eliminados.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $empleado', 'APPPATH\\Views\\salarios\\eliminados.php', 37)
- 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\salarios\\eliminados.php')
- 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('/salarios/eliminados', [], true)
- 5 APPPATH\Controllers\Salarios.php(68): view('/salarios/eliminados', [...])
- 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Salarios->eliminados()
- 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Salarios))
- 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
-CRITICAL - 2023-03-28 15:06:37 --> Undefined variable $empleados
-in APPPATH\Views\salarios\eliminados.php on line 37.
- 1 APPPATH\Views\salarios\eliminados.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $empleados', 'APPPATH\\Views\\salarios\\eliminados.php', 37)
+CRITICAL - 2023-03-28 15:26:20 --> Undefined array key "nombre_empleado"
+in APPPATH\Views\salarios\eliminados.php on line 39.
+ 1 APPPATH\Views\salarios\eliminados.php(39): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nombre_empleado"', 'APPPATH\\Views\\salarios\\eliminados.php', 39)
  2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\salarios\\eliminados.php')
  3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
  4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('/salarios/eliminados', [], true)

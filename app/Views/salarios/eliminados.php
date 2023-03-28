@@ -6,7 +6,7 @@
 </div>
 
 <body>
-    <h1 class="titulo" style="font-family: monospace"><?php echo "Salarios Eliminados"; ?></h1>
+<h1 class="titulo_Vista text-center" style="color:#0D6EFD;"><?php echo $titulo ?></h1>
 
     <div>
         <div>
@@ -22,9 +22,9 @@
 
             <br>
             <div class="table-responsive">
-                <table class="table table-bordered table-sm table-striped" id="dataTable" >
-                    <thead>
-                        <tr style="color:#98040a;font-weight:300;text-align:center;font-family:Arial;font-size:14px;">
+                <table class="table table-bordered border-primary">
+                    <thead class="table-light">
+                        <tr style="color:#0D6EFD;font-weight:300;text-align:center;font-family:Arial;font-size:14px;"   >
                             <th>Id</th>
                             <th>Empleado</th>
                             <th>Periodo</th>
@@ -33,16 +33,15 @@
                             <th colspan="2">Acciones</th>
                         </tr>
                     </thead>
-                    <tbody style="font-family:Arial;font-size:12px;">
-                        <?php foreach ($empleados as $dato) { ?>
-                            <tr>
-                                <td><?php echo $dato['id']; ?></td>
-                                <td><?php echo $dato['nombre_empleado']; ?></td>
-                                <td><?php echo $dato['periodo']; ?></td>
-                                <td><?php echo $dato['sueldo']; ?></td>
-                                <td><?php echo $dato['estado']; ?></td>
-                                <td title="Activar Registro" data-bs-toggle="modal" data-bs-target="#modal-confirma" href="#" data-href="<?php echo base_url('/salarios/eliminarS') . '/' . $dato['id'] . '/' . 'A'; ?>"><i class="bi bi-arrow-clockwise"></i></td>
-                            </tr>
+                    <tbody>
+                        <?php foreach($salarios as $dato ) { ?>
+                            <th><?php echo $dato['id']; ?></th>
+                                <th><?php echo $dato['nombre_empleado']; ?></th>
+                                <th><?php echo $dato['periodo']; ?></th>
+                                <th><?php echo $dato['sueldo']; ?></th>
+                                <th><?php echo $dato['estado']; ?></th>
+                                <th class="grid grid text-center" colspan="2">
+                                <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#modal-confirma" href="#" data-href="<?php echo base_url('/salarios/eliminarS') . '/' . $dato['id'] . '/' . 'A'; ?>"><i class="bi bi-arrow-clockwise"></i></button>
                         <?php } ?>
                     </tbody>
                 </table>

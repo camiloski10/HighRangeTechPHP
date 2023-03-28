@@ -37,7 +37,7 @@
             <th class="grid grid text-center" colspan="2">
              <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" id="btn_guardar" data-bs-target="#AgregarSalario" onclick="seleccionaSalarios(<?php echo $dato['id'] . ',' . 2 ?>);">
              <i class="bi bi-pen"></i></button>
-              <button type="button" class="btn btn-outline-danger" href="#" data-href="<?php echo base_url('/salarios/eliminar') . '/' .$dato['id']. '/' .'E'; ?>"  data-bs-toggle="modal" data-bs-target="#modal-confirma" ><i class="bi bi-recycle"></i></button>
+              <button type="button" class="btn btn-outline-danger" href="#" data-href="<?php echo base_url('/salarios/eliminar') . '/' .$dato['id']. '/' .'I'; ?>"  data-bs-toggle="modal" data-bs-target="#modal-confirma" ><i class="bi bi-recycle"></i></button>
             </th>
            
             
