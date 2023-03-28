@@ -29,7 +29,7 @@ class Salarios extends BaseController
     public function buscar_Salarios($id)
     {
         $returnData = array();
-        $salarios_ = $this->salarios->traer_Salarios($id);
+        $salarios_ = $this->salarios->traer($id);
         if (!empty($salarios_)) {
             array_push($returnData, $salarios_);
         }
