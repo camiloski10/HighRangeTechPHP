@@ -32,7 +32,7 @@
            <th><?php echo $dato['id']; ?></th>
             <th><?php echo $dato['nombre_empleado']; ?></th>
             <th><?php echo $dato['periodo']; ?></th>
-            <th><?php echo $dato['sueldo']; ?></th>
+            <th>$<?php echo $dato['sueldo']; ?></th>
             <th><?php echo $dato['estado']; ?></th>
             <th class="grid grid text-center" colspan="2">
              <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" id="btn_guardar" data-bs-target="#AgregarSalario" onclick="seleccionaSalarios(<?php echo $dato['id'] . ',' . 2 ?>);">
@@ -67,7 +67,9 @@
                 <input id="tp" name="tp" hidden>
                 <select name="empleado" id="empleado" class="form-select">
                   <option selected value="">Seleccionar Empleado</option>
-                  
+                  <?php foreach ($empleados as $dato) { ?>
+                    <option value="<?php echo $dato['id']; ?>"><?php echo $dato['nombres']; ?></option>
+                  <?php } ?>
                 </select>
               </div>
                     
