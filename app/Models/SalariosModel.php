@@ -32,4 +32,46 @@ class SalariosModel extends Model
         $datos = $this->first();  // nos trae el registro que cumpla con una condicion dada 
         return $datos;
     }
+    public function obtenerSalarios(){
+        $this->select('salarios.*, empleados.nombres as nombre_empleado');
+        $this->join('empleados','empleados.id = salarios.id_empleado');
+        $this->where('salarios.estado', 'A');
+        $datos = $this->findAll();  // nos trae todos los registros que cumplan con una condicion dada 
+        return $datos;
+    }
+    public function eliminarSalarios($id, $estado)
+    {
+        $datos = $this->update($id, ['estado' => $estado]);
+        return $datos;
+    }
+
+    public function eliminados_salarios(){
+        $this->select('salarios.*, empleados.nombres as nombre_empleado');
+        $this->join('empleados','empleados.id = salarios.id_empleado');
+        $this->where('salarios.estado', 'E');
+        $datos = $this->findAll();  // nos trae todos los registros que cumplan con una condicion dada 
+        return $datos;
+    }
+
+
+    public function guardar ($sueldo, $periodo, $id_empleado)
+    {
+        $this->save([
+            'id_empleado' => $id_empleado,
+            'periodo' => $periodo,
+            'sueldo' => $sueldo
+
+        ]);
+    }
+
+    public function actualizar ($sueldo, $periodo,$salario)
+    {
+        $this->update(
+            $salario,
+            [
+                'sueldo' => $sueldo,
+                'periodo' => $periodo,
+            ]
+        );
+    }
 }

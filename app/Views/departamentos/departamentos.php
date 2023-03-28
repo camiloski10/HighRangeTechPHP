@@ -54,7 +54,7 @@
             <div class="mb-3">
               <label for="nombre" class="col-form-label">Pais:</label>
               <select name="pais" id="pais" class="form-select form-select-lg mb-3">
-                <option id="Seleccionado">-Seleccione un País-</option>
+                <option id="seleccionado">-Seleccione un País-</option>
                 <?php foreach ($paises as $x => $valor) { ?>
                   <option value="<?php echo $valor['id'] ?>" name="pais"><?php echo $valor['nombre'] ?></option>
                 <?php } ?>
@@ -62,6 +62,7 @@
               <label for="nombre" class="col-form-label">Nombre:</label>
               <input type="text" class="form-control" name="nombre" id="nombre" required>
               <input type="text" class="form-control" name="id" id="id" hidden>
+              <input type="text" class="form-control" name="tp" id="tp" hidden>
             </div>
 
           </div>
@@ -111,17 +112,17 @@
         success: function(rs) {
           console.log(rs)
           $("#tp").val(2);
-          $("#id").val(rs[0]['id'])
+          $("#id").val(rs[0]['id']) 
           $("#Seleccionado").val(rs[0]['id_pais']);
           $("#Seleccionado").text(rs[0]['PNombre']);
           $("#nombre").val(rs[0]['nombre']);
           $("#btn_Guardar").text('Actualizar');
           $("#tituloModal").text('Actualizar el departamento ' + rs[0]['nombre']);
           $("#DptoModal").modal("show");
-        }
+        } 
       })
     } else {
-      $("#tp").val(1);
+      $("#tp").val(1);  
       $("#id").val('');
       $("#nombre").val('');
       $("#Seleccionado").val('');

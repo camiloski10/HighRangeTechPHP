@@ -1,0 +1,49 @@
+CRITICAL - 2023-03-28 14:47:26 --> Undefined variable $empleados
+in APPPATH\Views\salarios\eliminados.php on line 37.
+ 1 APPPATH\Views\salarios\eliminados.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $empleados', 'APPPATH\\Views\\salarios\\eliminados.php', 37)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\salarios\\eliminados.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('/salarios/eliminados', [], true)
+ 5 APPPATH\Controllers\Salarios.php(68): view('/salarios/eliminados', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Salarios->eliminados()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Salarios))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-28 14:48:27 --> Undefined variable $empleados
+in APPPATH\Views\salarios\eliminados.php on line 37.
+ 1 APPPATH\Views\salarios\eliminados.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $empleados', 'APPPATH\\Views\\salarios\\eliminados.php', 37)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\salarios\\eliminados.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('/salarios/eliminados', [], true)
+ 5 APPPATH\Controllers\Salarios.php(68): view('/salarios/eliminados', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Salarios->eliminados()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Salarios))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-28 14:48:28 --> Unmatched '}'
+in APPPATH\Views\salarios\eliminados.php on line 46.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('/salarios/eliminados', [], true)
+ 3 APPPATH\Controllers\Salarios.php(68): view('/salarios/eliminados', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Salarios->eliminados()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Salarios))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-28 14:48:28 --> Unmatched '}'
+in APPPATH\Views\salarios\eliminados.php on line 46.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('/salarios/eliminados', [], true)
+ 3 APPPATH\Controllers\Salarios.php(68): view('/salarios/eliminados', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Salarios->eliminados()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Salarios))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-28 14:48:28 --> Unmatched '}'
+in APPPATH\Views\salarios\eliminados.php on line 46.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('/salarios/eliminados', [], true)
+ 3 APPPATH\Controllers\Salarios.php(68): view('/salarios/eliminados', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Salarios->eliminados()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Salarios))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

@@ -54,6 +54,7 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="<?php echo base_url() ?>empleados">Administrar</a></li>
+            <li><a class="dropdown-item" href="<?php echo base_url() ?>salarios">Salarios</a></li>
           </ul>
         </li>
         <li class="nav-item">
