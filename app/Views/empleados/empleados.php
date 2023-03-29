@@ -100,6 +100,8 @@
                     </select>
                   </div>
                 </div>
+               
+
                 <label for="nacimientoCliente" class="col-form-label">Municipio de Residencia</label>
                 <select name="municipio" id="municipio" class="form-select form-select-lg mb-3" required>
                   <option id="MunicipioSeleccionado">-Seleccione un Municipio-</option>

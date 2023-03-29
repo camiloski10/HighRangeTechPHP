@@ -16,7 +16,7 @@ class Cargos extends BaseController
     {
         $cargos = $this->cargos->obtenerCargos();
 
-        $data = ['titulo' => 'Administrar Cargos', 'nombre' => 'Camilo', 'datos' => $cargos];
+        $data = ['titulo' => ' Cargos', 'nombre' => 'Camilo', 'datos' => $cargos];
         echo view('/principal/header', $data);
         echo view('/cargos/cargos', $data);
     }

@@ -1,20 +1,17 @@
 <body bgcolor="black">
-  <h1 style="text-align:center;"><?php echo $titulo; ?></h1>
-
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class=""></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-link active" aria-current="page" href="<?php echo base_url(); ?>/clientes">Clientes</a>
-          <a class="nav-link " aria-current="page" href="<?php echo base_url(); ?>/monedas">Tipo de Moneda</a>
-          <a class="nav-link " aria-current="page" href="<?php echo base_url(); ?>/prestamos">Prestamos</a>
-        </div>
+<div class="card mb-3 mx-auto text-center" style="max-width: 540px; color:#0D6EFD">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="img/cris.jpg" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
       </div>
     </div>
-  </nav>
+  </div>
+</div>
 
 </body>
