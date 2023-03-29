@@ -9,3 +9,31 @@ in APPPATH\Views\empleados\empleados.php on line 107.
  7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Empleados))
  8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-03-29 14:05:35 --> mysqli_sql_exception: Column 'id_dpto' cannot be null in C:\xampp\htdocs\HighRangeTechPHP\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\HighRangeTechPHP\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `mu...', 0)
+#1 C:\xampp\htdocs\HighRangeTechPHP\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `mu...')
+#2 C:\xampp\htdocs\HighRangeTechPHP\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `mu...')
+#3 C:\xampp\htdocs\HighRangeTechPHP\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `mu...', Array, false)
+#4 C:\xampp\htdocs\HighRangeTechPHP\system\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\HighRangeTechPHP\system\BaseModel.php(782): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\HighRangeTechPHP\system\Model.php(730): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\xampp\htdocs\HighRangeTechPHP\system\BaseModel.php(692): CodeIgniter\Model->insert(Array, false)
+#8 C:\xampp\htdocs\HighRangeTechPHP\app\Controllers\Municipios.php(65): CodeIgniter\BaseModel->save(Array)
+#9 C:\xampp\htdocs\HighRangeTechPHP\system\CodeIgniter.php(934): App\Controllers\Municipios->insertar()
+#10 C:\xampp\htdocs\HighRangeTechPHP\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Municipios))
+#11 C:\xampp\htdocs\HighRangeTechPHP\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\HighRangeTechPHP\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2023-03-29 14:05:35 --> Column 'id_dpto' cannot be null
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `municipios` (`id_dpto`, `nombre`, `fecha_crea`) VALUES (:id_dpto:, :nombre:, :fecha_crea:)', [...], false)
+ 2 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(782): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(730): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH\BaseModel.php(692): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH\Controllers\Municipios.php(65): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Municipios->insertar()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Municipios))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

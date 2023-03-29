@@ -20,7 +20,7 @@
             <th>Nombres</th>
             <th>Apellidos</th>
             <th>Nacimiento</th>
-            <th>Municipio</th>
+            <th>Municipio</th> 
             <th>Cargo</th>
             <th>Salario</th>
             <th>Estado</th>
@@ -181,7 +181,7 @@
           $("#PeriodoSeleccionado").text(rs[0]['periodo']);
           $("#PeriodoSeleccionado").text(rs[0]['periodo']);
           $("#salario_id").val(rs[0]['salario_id']);
-
+          
           $("#btn_Guardar").text('Actualizar');
           $("#tituloModal").text('Actualizar el país ' + rs[0]['nombre']);
           $("#modalAgregar").modal("show");
